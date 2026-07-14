@@ -1,0 +1,211 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Section from '../components/ui/Section.astro';
+import Button from '../components/ui/Button.astro';
+import { Image } from 'astro:assets';
+
+import drRicePhoto from '../assets/images/general/dr_meaghan_rice_psyd-lpc-1.jpg';
+import illustration from '../assets/images/illustrations/psychologist-illustration-04-1.png';
+---
+
+<PageLayout
+  title="About | Better Lives Building Tribes"
+  description="Learn about Dr. Meaghan Rice, PsyD, LPC — founder of Better Lives Building Tribes with over 10 years of clinical experience."
+>
+  <Section padding="lg">
+    <div class="about-hero">
+      <div class="about-hero__image">
+        <Image src={drRicePhoto} alt="Dr. Meaghan Rice, PsyD, LPC" width={400} height={500} />
+      </div>
+      <div class="about-hero__text">
+        <h1>Dr. Meaghan Rice, PsyD, LPC</h1>
+        <p class="about-hero__subtitle">Founder &amp; Clinical Director</p>
+        <p>
+          Dr. Meaghan Rice is a Doctor of Psychology, Licensed Professional Counselor,
+          Nationally Board Certified Counselor, and Approved Clinical Supervisor with over
+          10 years of clinical practice, organizational leadership, and community mental
+          health experience.
+        </p>
+        <p>
+          She specializes in relationships, personal empowerment, wellness, communication,
+          resilience, and connection. As the founder and clinical leader of Better Lives
+          Building Tribes, Dr. Rice focuses on organizational partnerships and community
+          impact programs.
+        </p>
+        <p>
+          A military spouse and parent, she integrates evidence-informed approaches with
+          practical application to create meaningful, lasting change for her clients and
+          their communities.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section background="cream" padding="lg">
+    <div class="credentials">
+      <h2>Credentials &amp; Education</h2>
+      <div class="credentials__grid">
+        <div class="credential-block">
+          <h3>Education</h3>
+          <ul>
+            <li>Doctor of Psychology (PsyD) — University of Arizona</li>
+            <li>Master's Degree — University of Arizona</li>
+            <li>Bachelor's Degree — University of Denver</li>
+          </ul>
+        </div>
+        <div class="credential-block">
+          <h3>Licenses &amp; Certifications</h3>
+          <ul>
+            <li>Licensed Professional Counselor (LPC)</li>
+            <li>Nationally Board Certified Counselor (NBCC)</li>
+            <li>Approved Clinical Supervisor (ACS)</li>
+            <li>Licensed in: CO, AZ, OR, MS, GA, IA</li>
+            <li>Licensed since 2011</li>
+          </ul>
+        </div>
+        <div class="credential-block">
+          <h3>Experience</h3>
+          <ul>
+            <li>10+ years of clinical practice</li>
+            <li>Correctional settings &amp; community mental health leadership</li>
+            <li>Telehealth practice since 2017</li>
+            <li>Organizational consulting &amp; partnerships</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section padding="lg">
+    <div class="cta-section">
+      <div class="cta-section__image">
+        <Image src={illustration} alt="Therapy illustration" width={300} height={300} />
+      </div>
+      <div class="cta-section__text">
+        <h2>Ready to Work Together?</h2>
+        <p>
+          Whether you're seeking individual support or organizational partnership,
+          Dr. Rice and the Better Lives team are here to help you build resilience
+          and create meaningful change.
+        </p>
+        <Button href="/schedule" variant="primary" size="lg">Schedule a Free Consultation</Button>
+      </div>
+    </div>
+  </Section>
+</PageLayout>
+
+<style>
+  .about-hero {
+    display: flex;
+    gap: var(--space-2xl);
+    align-items: flex-start;
+  }
+
+  .about-hero__image {
+    flex-shrink: 0;
+  }
+
+  .about-hero__image :global(img) {
+    border-radius: var(--radius-md);
+    max-width: 350px;
+  }
+
+  .about-hero__text {
+    flex: 1;
+  }
+
+  .about-hero__text h1 {
+    color: var(--color-teal);
+    margin-bottom: 0.25rem;
+  }
+
+  .about-hero__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--space-md);
+  }
+
+  .about-hero__text p {
+    line-height: 1.8;
+    margin-bottom: var(--space-sm);
+  }
+
+  .credentials h2 {
+    text-align: center;
+    color: var(--color-teal);
+    margin-bottom: var(--space-xl);
+  }
+
+  .credentials__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .credential-block h3 {
+    font-size: var(--font-size-md);
+    margin-bottom: var(--space-sm);
+    color: var(--color-teal);
+  }
+
+  .credential-block ul {
+    list-style: none;
+  }
+
+  .credential-block li {
+    padding: 0.35rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .credential-block li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+
+  .cta-section {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xl);
+  }
+
+  .cta-section__text {
+    flex: 1;
+  }
+
+  .cta-section__text h2 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta-section__text p {
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+  }
+
+  .cta-section__image :global(img) {
+    border-radius: var(--radius-lg);
+  }
+
+  @media (max-width: 980px) {
+    .about-hero {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .credentials__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-section {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

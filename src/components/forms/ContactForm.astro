@@ -1,0 +1,153 @@
+---
+
+---
+
+<form class="contact-form" id="contact-form" novalidate>
+  <div class="contact-form__field">
+    <label for="name">Name <span aria-hidden="true">*</span></label>
+    <input type="text" id="name" name="name" required autocomplete="name" />
+  </div>
+
+  <div class="contact-form__field">
+    <label for="email">Email Address <span aria-hidden="true">*</span></label>
+    <input type="email" id="email" name="email" required autocomplete="email" />
+  </div>
+
+  <div class="contact-form__field">
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" name="phone" autocomplete="tel" />
+  </div>
+
+  <div class="contact-form__field">
+    <label for="message">Message <span aria-hidden="true">*</span></label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+  </div>
+
+  <div class="contact-form__status" id="form-status" aria-live="polite"></div>
+
+  <button type="submit" class="contact-form__submit">Send Message</button>
+</form>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const status = document.getElementById('form-status');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const name = data.get('name')?.toString().trim();
+    const email = data.get('email')?.toString().trim();
+    const message = data.get('message')?.toString().trim();
+
+    if (!name || !email || !message) {
+      if (status) status.textContent = 'Please fill in all required fields.';
+      return;
+    }
+
+    if (status) {
+      status.textContent = 'Sending...';
+      status.className = 'contact-form__status';
+    }
+
+    // Placeholder — wire up to Cloudflare Function later
+    try {
+      // const res = await fetch('/api/contact', { method: 'POST', body: data });
+      if (status) {
+        status.textContent = 'Thank you! We will be in touch soon.';
+        status.classList.add('success');
+      }
+      form.reset();
+    } catch {
+      if (status) {
+        status.textContent = 'Something went wrong. Please call us at (720) 295-1508.';
+        status.classList.add('error');
+      }
+    }
+  });
+</script>
+
+<style>
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .contact-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .contact-form__field label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-heading);
+  }
+
+  .contact-form__field label span {
+    color: var(--color-rose);
+  }
+
+  .contact-form__field input,
+  .contact-form__field textarea {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radius-sm);
+    transition: border-color var(--transition-fast);
+    background: var(--color-white);
+    color: var(--color-text-dark);
+  }
+
+  .contact-form__field input:focus,
+  .contact-form__field textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(46, 163, 242, 0.15);
+  }
+
+  .contact-form__field textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .contact-form__submit {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    padding: 0.7rem 2rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .contact-form__submit:hover {
+    background-color: var(--color-teal);
+    border-color: var(--color-teal);
+  }
+
+  .contact-form__status {
+    font-size: var(--font-size-sm);
+    min-height: 1.4em;
+  }
+
+  .contact-form__status.success {
+    color: var(--color-teal);
+  }
+
+  .contact-form__status.error {
+    color: var(--color-rose);
+  }
+</style>

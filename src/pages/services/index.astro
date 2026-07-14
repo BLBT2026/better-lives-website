@@ -1,0 +1,97 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import Button from '../../components/ui/Button.astro';
+import ServiceCard from '../../components/cards/ServiceCard.astro';
+import { services } from '../../data/services';
+---
+
+<PageLayout
+  title="Services | Better Lives Building Tribes"
+  description="Explore our therapy services including mindfulness-based therapy, culturally sensitive therapy, trauma recovery, and more."
+>
+  <Section padding="lg">
+    <div class="page-header">
+      <h1>Services</h1>
+      <p>
+        You can't think your way out of what you felt your way into. Real transformation
+        requires meeting your emotions exactly where they are, without judgment or urgency
+        to make them disappear. In our work together, you'll learn that feelings aren't
+        problems to solve but messengers to hear, and that the compassion you extend to
+        yourself changes everything.
+      </p>
+    </div>
+  </Section>
+
+  <Section background="gray" padding="lg">
+    <div class="services-grid">
+      {services.map((service) => (
+        <ServiceCard
+          title={service.title}
+          summary={service.summary}
+          slug={service.slug}
+        />
+      ))}
+    </div>
+  </Section>
+
+  <Section background="cream" padding="lg">
+    <div class="cta">
+      <h2>Ready to Begin Your Journey?</h2>
+      <p>Schedule a free consultation to find the right approach for you.</p>
+      <Button href="/schedule" variant="primary" size="lg">Schedule a Free Consultation</Button>
+    </div>
+  </Section>
+</PageLayout>
+
+<style>
+  .page-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .page-header h1 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-md);
+  }
+
+  .page-header p {
+    font-size: var(--font-size-md);
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .cta {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta h2 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta p {
+    margin-bottom: var(--space-lg);
+  }
+
+  @media (max-width: 980px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,129 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Section from '../components/ui/Section.astro';
+import Button from '../components/ui/Button.astro';
+import { Image } from 'astro:assets';
+
+import whyPartner from '../assets/images/hero/Why-Partner-with-Us-510x382.jpg';
+import whoPartner from '../assets/images/hero/Who-We-Partner-With-510x382.jpg';
+import howPartner from '../assets/images/hero/How-to-Partner-with-Us-510x382.jpg';
+import becomePartner from '../assets/images/hero/Become-Our-Partner-510x382.jpg';
+---
+
+<PageLayout
+  title="Become Our Partner | Better Lives Building Tribes"
+  description="Partner with Better Lives Building Tribes to strengthen relationships, support well-being, and build resilience in your organization or community."
+>
+  <Section padding="lg">
+    <div class="page-header">
+      <h1>Become Our Partner</h1>
+      <p>
+        Better Lives Building Tribes partners with organizations and communities to
+        strengthen relationships, support well-being, and build resilience that lasts.
+      </p>
+    </div>
+  </Section>
+
+  <Section background="cream" padding="lg">
+    <div class="partner-block">
+      <div class="partner-block__image">
+        <Image src={whyPartner} alt="Why Partner with Us" width={510} height={382} />
+      </div>
+      <div class="partner-block__text">
+        <h2>Why Partner with Us</h2>
+        <p>
+          Our evidence-informed approach combines clinical expertise with organizational
+          understanding to create lasting change. We bring a track record of meaningful
+          impact and a deep commitment to the communities we serve.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section padding="lg">
+    <div class="partner-block partner-block--reverse">
+      <div class="partner-block__image">
+        <Image src={whoPartner} alt="Who We Partner With" width={510} height={382} />
+      </div>
+      <div class="partner-block__text">
+        <h2>Who We Partner With</h2>
+        <p>
+          We work with organizations of all sizes, community groups, schools, military
+          installations, and nonprofits who share our commitment to building healthier
+          connections and supporting well-being.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section background="cream" padding="lg">
+    <div class="partner-block">
+      <div class="partner-block__image">
+        <Image src={howPartner} alt="How to Partner with Us" width={510} height={382} />
+      </div>
+      <div class="partner-block__text">
+        <h2>How to Partner with Us</h2>
+        <p>
+          Getting started is simple. Reach out to us to discuss your organization's needs,
+          and we'll work together to design a partnership that creates meaningful, lasting
+          impact for your team or community.
+        </p>
+        <Button href="/contact" variant="primary">Start the Conversation</Button>
+      </div>
+    </div>
+  </Section>
+</PageLayout>
+
+<style>
+  .page-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .page-header h1 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-md);
+  }
+
+  .page-header p {
+    font-size: var(--font-size-md);
+    line-height: 1.8;
+  }
+
+  .partner-block {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xl);
+  }
+
+  .partner-block--reverse {
+    flex-direction: row-reverse;
+  }
+
+  .partner-block__image :global(img) {
+    border-radius: var(--radius-md);
+  }
+
+  .partner-block__text {
+    flex: 1;
+  }
+
+  .partner-block__text h2 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-sm);
+  }
+
+  .partner-block__text p {
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+  }
+
+  @media (max-width: 768px) {
+    .partner-block,
+    .partner-block--reverse {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

@@ -1,0 +1,106 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Section from '../components/ui/Section.astro';
+import ContactForm from '../components/forms/ContactForm.astro';
+import Icon from '../components/ui/Icon.astro';
+---
+
+<PageLayout
+  title="Contact | Better Lives Building Tribes"
+  description="Get in touch with Better Lives Building Tribes. Call (720) 295-1508 or send us a message."
+>
+  <Section padding="lg">
+    <div class="contact-layout">
+      <div class="contact-form-col">
+        <h1>Contact</h1>
+        <p class="contact-intro">
+          We'd love to hear from you. Fill out the form below or reach out directly
+          using the contact information provided.
+        </p>
+        <ContactForm />
+      </div>
+
+      <aside class="contact-info">
+        <div class="info-block">
+          <h3><Icon name="phone" size={18} /> Phone</h3>
+          <a href="tel:7202951508">(720) 295-1508</a>
+        </div>
+
+        <div class="info-block">
+          <h3><Icon name="email" size={18} /> Email</h3>
+          <a href="mailto:BetterLives.BuildingTribes@gmail.com">BetterLives.BuildingTribes@gmail.com</a>
+        </div>
+
+        <div class="info-block">
+          <h3><Icon name="clock" size={18} /> Hours</h3>
+          <p>Mon – Thu: 10 AM – 7 PM</p>
+          <p>Fri: 10 AM – 5 PM</p>
+        </div>
+
+        <div class="info-block">
+          <h3><Icon name="location" size={18} /> Locations</h3>
+          <p>1312 17th St, Denver, CO</p>
+          <p>10088 Thrive Ln, Colorado Springs, CO 80924</p>
+        </div>
+      </aside>
+    </div>
+  </Section>
+</PageLayout>
+
+<style>
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+  }
+
+  .contact-form-col h1 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-xs);
+  }
+
+  .contact-intro {
+    margin-bottom: var(--space-lg);
+    line-height: 1.7;
+  }
+
+  .contact-info {
+    background: var(--color-cream);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .info-block h3 {
+    font-size: var(--font-size-base);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-teal);
+  }
+
+  .info-block a {
+    color: var(--color-text-dark);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+  }
+
+  .info-block a:hover {
+    color: var(--color-primary);
+  }
+
+  .info-block p {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .contact-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

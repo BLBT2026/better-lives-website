@@ -1,0 +1,80 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  name: string;
+  title: string;
+  license: string;
+  licensedIn: string;
+  photo: ImageMetadata;
+  pronouns?: string;
+}
+
+const { name, title, license, licensedIn, photo, pronouns } = Astro.props;
+---
+
+<article class="team-card">
+  <div class="team-card__image">
+    <Image src={photo} alt={name} width={400} height={284} />
+  </div>
+  <div class="team-card__content">
+    <h3 class="team-card__name">{name}</h3>
+    {pronouns && <span class="team-card__pronouns">({pronouns})</span>}
+    <p class="team-card__title">{title}</p>
+    <p class="team-card__meta">
+      <span>Licensed in: {licensedIn}</span>
+      <span>License: {license}</span>
+    </p>
+  </div>
+</article>
+
+<style>
+  .team-card {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-normal);
+  }
+
+  .team-card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .team-card__image :global(img) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 400 / 284;
+    object-fit: cover;
+  }
+
+  .team-card__content {
+    padding: var(--space-md);
+  }
+
+  .team-card__name {
+    font-size: var(--font-size-lg);
+    margin-bottom: 0.15rem;
+  }
+
+  .team-card__pronouns {
+    font-size: var(--font-size-xs);
+    color: var(--color-text);
+    font-style: italic;
+  }
+
+  .team-card__title {
+    font-size: var(--font-size-sm);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 0.5rem;
+  }
+
+  .team-card__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    font-size: var(--font-size-xs);
+    color: var(--color-text);
+  }
+</style>

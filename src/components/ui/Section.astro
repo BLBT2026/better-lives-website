@@ -1,0 +1,43 @@
+---
+interface Props {
+  background?: 'white' | 'cream' | 'gray' | 'teal' | 'rose';
+  padding?: 'sm' | 'md' | 'lg';
+  id?: string;
+  class?: string;
+  wide?: boolean;
+}
+
+const { background = 'white', padding = 'md', id, class: className, wide = false } = Astro.props;
+---
+
+<section class:list={[`bg--${background}`, `pad--${padding}`, className]} id={id}>
+  <div class:list={['container', { wide }]}>
+    <slot />
+  </div>
+</section>
+
+<style>
+  section {
+    width: 100%;
+  }
+
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding-inline: var(--container-padding);
+  }
+
+  .container.wide {
+    max-width: var(--container-wide);
+  }
+
+  .pad--sm { padding-block: var(--space-lg); }
+  .pad--md { padding-block: var(--space-2xl); }
+  .pad--lg { padding-block: var(--space-3xl); }
+
+  .bg--white { background-color: var(--color-white); }
+  .bg--cream { background-color: var(--color-cream); }
+  .bg--gray { background-color: var(--color-gray-bg); }
+  .bg--teal { background-color: var(--color-teal); color: var(--color-white); }
+  .bg--rose { background-color: var(--color-rose); }
+</style>

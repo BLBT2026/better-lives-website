@@ -1,0 +1,68 @@
+---
+interface Props {
+  title: string;
+  summary: string;
+  slug: string;
+}
+
+const { title, summary, slug } = Astro.props;
+---
+
+<article class="service-card">
+  <h3 class="service-card__title">
+    <a href={`/services/${slug}`}>{title}</a>
+  </h3>
+  <p class="service-card__summary">{summary}</p>
+  <a href={`/services/${slug}`} class="service-card__link">Learn More &rarr;</a>
+</article>
+
+<style>
+  .service-card {
+    background: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .service-card__title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-xs);
+  }
+
+  .service-card__title a {
+    color: var(--color-heading);
+    text-decoration: none;
+  }
+
+  .service-card__title a:hover {
+    color: var(--color-primary);
+  }
+
+  .service-card__summary {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    color: var(--color-text);
+    flex: 1;
+    margin-bottom: var(--space-sm);
+  }
+
+  .service-card__link {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    text-decoration: none;
+    align-self: flex-start;
+  }
+
+  .service-card__link:hover {
+    color: var(--color-teal);
+  }
+</style>

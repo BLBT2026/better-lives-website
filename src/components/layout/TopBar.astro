@@ -1,0 +1,71 @@
+---
+import Icon from '../ui/Icon.astro';
+import SocialIcons from '../ui/SocialIcons.astro';
+---
+
+<div class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__contact">
+      <a href="tel:7202951508" class="topbar__link">
+        <Icon name="phone" size={14} />
+        <span>(720) 295-1508</span>
+      </a>
+      <a href="/schedule" class="topbar__link">
+        <Icon name="clock" size={14} />
+        <span>Schedule</span>
+      </a>
+    </div>
+    <SocialIcons size={14} color="light" />
+  </div>
+</div>
+
+<style>
+  .topbar {
+    background-color: var(--color-teal);
+    color: var(--color-white);
+    font-size: var(--font-size-xs);
+  }
+
+  .topbar__inner {
+    max-width: var(--container-wide);
+    margin: 0 auto;
+    padding: 0.4rem var(--container-padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topbar__contact {
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+  }
+
+  .topbar__link {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+  }
+
+  .topbar__link:hover {
+    opacity: 0.8;
+    color: var(--color-white);
+  }
+
+  @media (max-width: 640px) {
+    .topbar__inner {
+      justify-content: center;
+    }
+
+    .topbar__contact {
+      gap: var(--space-sm);
+    }
+
+    .topbar :global(.social-icons) {
+      display: none;
+    }
+  }
+</style>

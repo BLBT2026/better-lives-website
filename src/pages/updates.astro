@@ -1,0 +1,52 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Section from '../components/ui/Section.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<PageLayout
+  title="Updates | Better Lives Building Tribes"
+  description="Read the latest articles and updates from Better Lives Building Tribes on mental health, therapy, and wellness."
+>
+  <Section padding="lg">
+    <div class="page-header">
+      <h1>Updates</h1>
+      <p>Insights on mental health, therapy, and building resilience from our team.</p>
+    </div>
+  </Section>
+
+  <Section background="gray" padding="lg">
+    <div class="empty">
+      <p>Blog posts are coming soon. Check back for updates on mental health, therapy, and wellness.</p>
+      <Button href="/contact" variant="outline">Contact Us</Button>
+    </div>
+  </Section>
+</PageLayout>
+
+<style>
+  .page-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .page-header h1 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-xs);
+  }
+
+  .page-header p {
+    line-height: 1.7;
+  }
+
+  .empty {
+    text-align: center;
+    padding: var(--space-2xl);
+    font-size: var(--font-size-md);
+    color: var(--color-text);
+  }
+
+  .empty p {
+    margin-bottom: var(--space-lg);
+  }
+</style>

@@ -1,0 +1,349 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../ui/Icon.astro';
+import logo from '../../assets/images/logo.png';
+
+interface NavItem {
+  label: string;
+  href: string;
+  children?: { label: string; href: string }[];
+}
+
+const navItems: NavItem[] = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Partners', href: '/#partners' },
+  {
+    label: 'Blog',
+    href: '/updates',
+    children: [
+      { label: 'RSS', href: '/blog' },
+    ],
+  },
+  {
+    label: 'Services',
+    href: '/services',
+    children: [
+      { label: 'Grief and Loss', href: '/services/grief-and-loss' },
+    ],
+  },
+  { label: 'Our Team', href: '/our-team' },
+  { label: 'Schedule', href: '/schedule' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const currentPath = Astro.url.pathname;
+
+// Split nav items for centered logo layout
+const leftNav = navItems.slice(0, 4);
+const rightNav = navItems.slice(4);
+---
+
+<header class="header" id="site-header">
+  <div class="header__inner">
+    <!-- Desktop nav: split around logo -->
+    <nav class="header__nav desktop-nav" aria-label="Main navigation">
+      <ul class="nav-list nav-list--left">
+        {leftNav.map((item) => (
+          <li class:list={['nav-item', { 'has-dropdown': item.children }]}>
+            <a
+              href={item.href}
+              class:list={['nav-link', { active: currentPath === item.href || currentPath.startsWith(item.href + '/') }]}
+            >
+              {item.label}
+              {item.children && <Icon name="chevron-down" size={12} />}
+            </a>
+            {item.children && (
+              <ul class="dropdown">
+                {item.children.map((child) => (
+                  <li>
+                    <a href={child.href} class="dropdown-link">{child.label}</a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+
+      <a href="/" class="header__logo" aria-label="Better Lives Building Tribes - Home">
+        <Image src={logo} alt="Better Lives Building Tribes" width={200} height={85} loading="eager" />
+      </a>
+
+      <ul class="nav-list nav-list--right">
+        {rightNav.map((item) => (
+          <li class:list={['nav-item', { 'has-dropdown': item.children }]}>
+            <a
+              href={item.href}
+              class:list={['nav-link', { active: currentPath === item.href || currentPath.startsWith(item.href + '/') }]}
+            >
+              {item.label}
+              {item.children && <Icon name="chevron-down" size={12} />}
+            </a>
+            {item.children && (
+              <ul class="dropdown">
+                {item.children.map((child) => (
+                  <li>
+                    <a href={child.href} class="dropdown-link">{child.label}</a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Mobile nav -->
+    <div class="mobile-header">
+      <a href="/" class="header__logo" aria-label="Better Lives Building Tribes - Home">
+        <Image src={logo} alt="Better Lives Building Tribes" width={160} height={68} loading="eager" />
+      </a>
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false" id="mobile-toggle">
+        <Icon name="menu" size={24} class="icon-menu" />
+        <Icon name="close" size={24} class="icon-close" />
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <ul class="mobile-nav-list">
+        {navItems.map((item) => (
+          <li>
+            <a href={item.href} class="mobile-nav-link">{item.label}</a>
+            {item.children && (
+              <ul class="mobile-subnav">
+                {item.children.map((child) => (
+                  <li>
+                    <a href={child.href} class="mobile-nav-link mobile-nav-link--sub">{child.label}</a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-toggle');
+  const nav = document.getElementById('mobile-nav');
+  const header = document.getElementById('site-header');
+
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    nav?.classList.toggle('is-open');
+  });
+
+  // Sticky header
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (scrollY > 100) {
+      header?.classList.add('is-sticky');
+    } else {
+      header?.classList.remove('is-sticky');
+    }
+    lastScroll = scrollY;
+  }, { passive: true });
+</script>
+
+<style>
+  .header {
+    background: var(--color-white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: box-shadow var(--transition-normal);
+  }
+
+  .header.is-sticky {
+    box-shadow: var(--shadow-md);
+  }
+
+  .header__inner {
+    max-width: var(--container-wide);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+  }
+
+  /* Desktop navigation */
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    gap: 0.25rem;
+    flex: 1;
+  }
+
+  .nav-list--left {
+    justify-content: flex-end;
+  }
+
+  .nav-list--right {
+    justify-content: flex-start;
+  }
+
+  .header__logo {
+    flex-shrink: 0;
+    padding: 0 var(--space-md);
+  }
+
+  .header__logo :global(img) {
+    height: auto;
+    width: auto;
+    max-height: 65px;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    color: var(--color-text-dark);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    transition: color var(--transition-fast);
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-primary);
+  }
+
+  /* Dropdown */
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: var(--color-white);
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-sm);
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all var(--transition-fast);
+    z-index: 10;
+  }
+
+  .dropdown-link {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: var(--color-text-dark);
+    font-size: var(--font-size-sm);
+    transition: background var(--transition-fast);
+  }
+
+  .dropdown-link:hover {
+    background: var(--color-gray-bg);
+    color: var(--color-primary);
+  }
+
+  /* Mobile header */
+  .mobile-header {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-xs) 0;
+  }
+
+  .mobile-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-dark);
+    padding: 0.5rem;
+  }
+
+  .mobile-toggle .icon-close {
+    display: none;
+  }
+
+  .mobile-toggle[aria-expanded='true'] .icon-menu {
+    display: none;
+  }
+
+  .mobile-toggle[aria-expanded='true'] .icon-close {
+    display: block;
+  }
+
+  /* Mobile nav */
+  .mobile-nav {
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height var(--transition-normal);
+  }
+
+  .mobile-nav.is-open {
+    max-height: 500px;
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    padding-bottom: var(--space-sm);
+    border-top: 1px solid var(--color-gray-bg);
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: 0.65rem 0;
+    color: var(--color-text-dark);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    border-bottom: 1px solid var(--color-gray-bg);
+  }
+
+  .mobile-nav-link--sub {
+    padding-left: var(--space-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-normal);
+  }
+
+  .mobile-subnav {
+    list-style: none;
+  }
+
+  @media (max-width: 980px) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .mobile-header {
+      display: flex;
+    }
+
+    .mobile-nav {
+      display: block;
+    }
+
+    .header__logo :global(img) {
+      max-height: 50px;
+    }
+  }
+</style>

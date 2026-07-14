@@ -1,0 +1,58 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  size?: number;
+  color?: 'dark' | 'light';
+}
+
+const { size = 18, color = 'dark' } = Astro.props;
+
+const socials = [
+  { name: 'facebook' as const, href: 'https://www.facebook.com/BetterLivesBuildingTribes', label: 'Facebook' },
+  { name: 'twitter' as const, href: 'https://x.com/betterlivesb', label: 'X (Twitter)' },
+  { name: 'instagram' as const, href: 'https://www.instagram.com/dr_meaghan/', label: 'Instagram' },
+  { name: 'tiktok' as const, href: 'https://www.tiktok.com/@dr_meaghan', label: 'TikTok' },
+  { name: 'youtube' as const, href: 'https://www.youtube.com/@dr.meaghan2354', label: 'YouTube' },
+];
+---
+
+<ul class:list={['social-icons', color]}>
+  {socials.map((social) => (
+    <li>
+      <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
+        <Icon name={social.name} size={size} />
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .social-icons {
+    display: flex;
+    gap: var(--space-xs);
+    list-style: none;
+    align-items: center;
+  }
+
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    border-radius: var(--radius-sm);
+    transition: opacity var(--transition-fast);
+  }
+
+  .social-icons a:hover {
+    opacity: 0.7;
+  }
+
+  .dark a {
+    color: var(--color-text);
+  }
+
+  .light a {
+    color: var(--color-white);
+  }
+</style>

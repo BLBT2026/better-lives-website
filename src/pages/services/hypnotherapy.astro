@@ -1,0 +1,35 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import Section from '../../components/ui/Section.astro';
+---
+
+<ServiceLayout
+  title="Hypnotherapy"
+  description="Access your subconscious mind through clinical hypnotherapy to address anxiety, habits, trauma, and other challenges in a safe therapeutic setting."
+>
+  <Section background="cream" padding="md">
+    <div class="detail">
+      <p>
+        At Better Lives Building Tribes, we offer this service as part of our comprehensive
+        approach to mental health and wellness. Our licensed therapists are trained in
+        evidence-based methods to provide you with the highest quality of care.
+      </p>
+      <p>
+        Access your subconscious mind through clinical hypnotherapy to address anxiety, habits, trauma, and other challenges in a safe therapeutic setting.
+      </p>
+    </div>
+  </Section>
+</ServiceLayout>
+
+<style>
+  .detail {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .detail p {
+    font-size: var(--font-size-md);
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+  }
+</style>

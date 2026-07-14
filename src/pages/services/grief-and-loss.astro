@@ -1,0 +1,118 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import Button from '../../components/ui/Button.astro';
+---
+
+<PageLayout
+  title="Grief & Loss Therapy | Better Lives Building Tribes"
+  description="Compassionate grief and loss therapy to help you navigate loss, express emotions, build coping strategies, and find healing."
+>
+  <Section padding="lg">
+    <div class="page-header">
+      <h1>Grief &amp; Loss Therapy</h1>
+      <p>
+        The journey through grief and loss can often feel like navigating a stormy sea.
+        At Better Lives Building Tribes, we are dedicated to creating a safe harbor where
+        you can freely express your emotions. Healing is not a straightforward path; it is
+        a deeply personal journey that unfolds uniquely for each individual.
+      </p>
+    </div>
+  </Section>
+
+  <Section background="cream" padding="md">
+    <div class="service-detail">
+      <h2>Expression &amp; Validation</h2>
+      <p>
+        We provide a safe, non-judgmental space for you to express your feelings around
+        grief and loss. We believe in acknowledging all of your emotions — whether it's
+        sadness, anger, confusion, or even relief. Through various forms of expression
+        including storytelling and art, we help you process what you're experiencing.
+      </p>
+    </div>
+  </Section>
+
+  <Section padding="md">
+    <div class="service-detail">
+      <h2>Coping Strategies</h2>
+      <p>
+        We offer practical techniques for managing anxiety, building resilience, and
+        fostering a positive mindset during difficult times. Our approaches include
+        mindfulness practices, creative expression, and community support to help you
+        develop sustainable ways to cope with your loss.
+      </p>
+    </div>
+  </Section>
+
+  <Section background="cream" padding="md">
+    <div class="service-detail">
+      <h2>Building Resilience &amp; Hope</h2>
+      <p>
+        Our services emphasize resilience, hope, and cherishing memories. We help you
+        find meaning and strength as you navigate your grief journey, supporting you
+        in honoring what you've lost while moving toward healing and renewed purpose.
+      </p>
+    </div>
+  </Section>
+
+  <Section background="teal" padding="lg">
+    <div class="cta">
+      <h2>Schedule a Free Consultation</h2>
+      <p>
+        You don't have to walk this path alone. Our compassionate therapists are here
+        to support you through grief and loss.
+      </p>
+      <Button href="/schedule" variant="primary" size="lg">Book a Consultation</Button>
+    </div>
+  </Section>
+</PageLayout>
+
+<style>
+  .page-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .page-header h1 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-md);
+  }
+
+  .page-header p {
+    font-size: var(--font-size-md);
+    line-height: 1.8;
+  }
+
+  .service-detail {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .service-detail h2 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-sm);
+  }
+
+  .service-detail p {
+    font-size: var(--font-size-md);
+    line-height: 1.8;
+  }
+
+  .cta {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta h2 {
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta p {
+    color: var(--color-cream);
+    margin-bottom: var(--space-lg);
+    line-height: 1.7;
+  }
+</style>

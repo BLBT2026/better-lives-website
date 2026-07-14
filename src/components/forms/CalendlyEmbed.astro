@@ -1,0 +1,46 @@
+---
+interface Props {
+  url?: string;
+}
+
+const { url = 'https://calendly.com/betterlives-buildingtribes/30min?primary_color=f1c1b7' } = Astro.props;
+---
+
+<div class="calendly-wrapper">
+  <div
+    class="calendly-inline-widget"
+    data-url={url}
+    style="min-width:320px;height:700px;"
+  >
+  </div>
+</div>
+
+<script>
+  // Lazy load Calendly script
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const script = document.createElement('script');
+          script.src = 'https://assets.calendly.com/assets/external/widget.js';
+          script.async = true;
+          document.head.appendChild(script);
+          observer.disconnect();
+        }
+      });
+    },
+    { rootMargin: '200px' }
+  );
+
+  const widget = document.querySelector('.calendly-wrapper');
+  if (widget) observer.observe(widget);
+</script>
+
+<style>
+  .calendly-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+  }
+</style>
