@@ -1,0 +1,167 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import Button from '../../components/ui/Button.astro';
+
+const title = "From Numb to Alive: Reconnecting with Your Emotions After Trauma";
+const date = "2025-05-28";
+const category = "Trauma &amp; Healing";
+---
+
+<PageLayout title={`${title} | Better Lives Building Tribes`} description="Emotional numbness is one of the most common effects of trauma. It can feel like moving through life behind glass. You can see the world, but not quite touch it. You may know you love your family, enj">
+  <Section padding="lg">
+    <article class="blog-post">
+      <header class="blog-post__header">
+        <span class="blog-post__category">{category}</span>
+        <h1>{title}</h1>
+        <time class="blog-post__date" datetime={date}>
+          {new Date(date + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+        <p class="blog-post__author">Dr. Meaghan Rice, PsyD</p>
+      </header>
+
+      <div class="blog-post__content">
+        <p>Emotional numbness is one of the most common effects of trauma. It can feel like moving through life behind glass. You can see the world, but not quite touch it. You may know you love your family, enjoy your hobbies, or appreciate your work, yet the feeling is muted or absent. This disconnection is not a character flaw. It is the nervous system’s way of protecting you. The good news is that numbness is not permanent. With support, you can reconnect with your emotions and return to a fuller, more vibrant life.</p>
+
+<h2>Why trauma causes emotional numbness</h2>
+<p>When you experience trauma, your body and brain adapt to help you survive. In moments of threat, the nervous system releases stress hormones that prepare you to fight, flee, or freeze. If escape or resolution is not possible, the system may shut down to minimize pain. This response, known as dissociation, creates a protective distance between you and the overwhelming experience. Over time, that distance can extend to everyday life, leaving you feeling detached from both joy and sorrow.</p>
+
+<h2>What emotional numbness can look like</h2>
+<ul>
+<li>Going through the motions without feeling much</li>
+<li>Struggling to connect deeply with loved ones</li>
+<li>Forgetting moments of joy or sadness soon after they happen</li>
+<li>Feeling flat, bored, or uninterested in things that used to matter</li>
+<li>Difficulty crying or expressing emotion</li>
+<li>Feeling distant from your body or watching life from the outside</li>
+</ul>
+
+<p>Numbness is a form of protection, not indifference. It means your body has learned that feeling is unsafe. Healing begins when you start teaching your nervous system that it is safe to feel again.</p>
+
+<h2>Therapy for emotional reconnection</h2>
+<p>In trauma informed therapy, the goal is not to force emotion but to create safety so emotions can return naturally. At Better Lives, Building Tribes, we help clients across Colorado reconnect with their bodies and emotions at a pace that respects their unique story. Whether in Denver, Boulder, or online through therapy for Colorado residents, our approach is gentle, collaborative, and body aware.</p>
+
+<h3>1. Rebuilding safety first</h3>
+<p>You cannot feel safely until your body believes it is safe. Therapy starts by strengthening your connection to the present. We use grounding, breathwork, and sensory awareness exercises to help you notice what is happening now rather than what happened then. Safety is the foundation for every other kind of healing.</p>
+
+<h3>2. Understanding the purpose of numbness</h3>
+<p>Numbness often feels frustrating, but it deserves respect. It protected you when emotions felt unbearable. In therapy, we work on gratitude toward this part of you while also gently inviting it to loosen its hold. You learn that it is possible to feel without becoming overwhelmed.</p>
+
+<h3>3. Gradual reconnection to the body</h3>
+<p>Trauma disconnects you from your physical sensations. We use simple somatic techniques, like noticing the texture of your clothes, the temperature of the air, or the rhythm of your breath. Small steps build trust in your body’s ability to tolerate feeling. Over time, these moments of awareness grow into emotional presence.</p>
+
+<h3>4. Allowing safe emotions</h3>
+<p>When feelings return, they may come in waves. Therapy helps you create a container for them. You learn that sadness, anger, or joy are all signals from your nervous system, not threats. By naming and breathing through emotion, you reclaim energy that was once locked away in suppression.</p>
+
+<h3>5. Reconnecting through relationships</h3>
+<p>Emotions are not meant to exist in isolation. Healing happens in connection. Therapy provides a safe relationship where authenticity is met with care rather than judgment. As you experience acceptance in the therapeutic space, it becomes easier to bring your full self into other relationships.</p>
+
+<h2>Everyday steps to reconnect with emotion</h2>
+<ul>
+<li><strong>Slow down.</strong> Emotions need time and space. Build small pauses into your day where you can notice how you feel.</li>
+<li><strong>Journal sensations.</strong> Instead of focusing on thoughts, write what you feel in your body: warmth, heaviness, pressure, or movement.</li>
+<li><strong>Use music or art.</strong> Creative expression bypasses logic and awakens emotion gently.</li>
+<li><strong>Engage your senses.</strong> Light a candle, taste something sweet, or step outside and feel the air. Sensory input anchors you in the present.</li>
+<li><strong>Seek safe connection.</strong> Share something honest with someone you trust, even if it is small. Connection helps the nervous system learn safety.</li>
+</ul>
+
+<h2>Why reconnecting matters</h2>
+<p>Emotional numbing blocks both pain and pleasure. When you begin to feel again, life becomes more vivid. Colors seem brighter, relationships deepen, and even challenges feel more meaningful because you are truly present. Reconnection does not mean constant happiness. It means being able to experience the full range of emotion without losing yourself to it.</p>
+
+<h2>Healing in Colorado</h2>
+<p>Better Lives, Building Tribes provides trauma informed therapy throughout Colorado, including online therapy for Colorado residents. Our mission is to help people move from surviving to living fully, from numbness to connection. Therapy offers the tools, guidance, and safety you need to rediscover your emotional world and your capacity for joy.</p>
+
+<h2>Take the next step</h2>
+<p><strong>If you are ready to begin your next chapter, <a href="https://betterlivesbuildingtribes.com/schedulewithdrmeaghan/">Schedule with Dr. Meaghan</a> or call <a href="tel:+13035789317">(303) 578-9317</a>.</strong></p>
+      </div>
+
+      <footer class="blog-post__footer">
+        <Button href="/updates" variant="outline">Back to Updates</Button>
+        <Button href="/schedule" variant="primary">Schedule a Consultation</Button>
+      </footer>
+    </article>
+  </Section>
+</PageLayout>
+
+<style>
+  .blog-post {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .blog-post__header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .blog-post__category {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__header h1 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__date {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+  }
+
+  .blog-post__author {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    font-style: italic;
+  }
+
+  .blog-post__content {
+    line-height: 1.8;
+    font-size: var(--font-size-md);
+  }
+
+  .blog-post__content :global(h2) {
+    color: var(--color-teal);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .blog-post__content :global(h3) {
+    color: var(--color-heading);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__content :global(p) {
+    margin-bottom: var(--space-md);
+  }
+
+  .blog-post__content :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .blog-post__content :global(ul),
+  .blog-post__content :global(ol) {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-lg);
+  }
+
+  .blog-post__content :global(li) {
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__footer {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-gray-bg);
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+  }
+</style>

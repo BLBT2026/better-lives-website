@@ -1,0 +1,171 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import Button from '../../components/ui/Button.astro';
+
+const title = "How Anxiety Masks as Control: Releasing the Need to Do It All";
+const date = "2025-06-11";
+const category = "Anxiety &amp; Stress";
+---
+
+<PageLayout title={`${title} | Better Lives Building Tribes`} description="For many people, anxiety does not look like panic or visible distress. It looks like control. It looks like managing every detail, anticipating every problem, and taking on too much because the altern">
+  <Section padding="lg">
+    <article class="blog-post">
+      <header class="blog-post__header">
+        <span class="blog-post__category">{category}</span>
+        <h1>{title}</h1>
+        <time class="blog-post__date" datetime={date}>
+          {new Date(date + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+        <p class="blog-post__author">Dr. Meaghan Rice, PsyD</p>
+      </header>
+
+      <div class="blog-post__content">
+        <p>For many people, anxiety does not look like panic or visible distress. It looks like control. It looks like managing every detail, anticipating every problem, and taking on too much because the alternative feels unsafe. Control becomes a way to keep the world predictable and to calm an overactive nervous system. The problem is that it also keeps you exhausted, disconnected, and anxious.</p>
+
+<h2>When anxiety hides behind control</h2>
+<p>Control is not always about power. It is about safety. If you have lived through chaos, inconsistency, or trauma, your mind learns that vigilance prevents pain. Staying organized, overprepared, or overly responsible can make you feel secure. But underneath that control is a body that does not trust the world to hold you safely.</p>
+
+<p>People who use control as a coping strategy often appear strong and capable. They keep households, teams, and families running smoothly. Yet inside, they feel constant tension. The mind never rests because it believes letting go will cause something to fall apart.</p>
+
+<h2>Signs anxiety might be hiding under control</h2>
+<ul>
+<li>Feeling uneasy when others take the lead</li>
+<li>Difficulty delegating tasks or asking for help</li>
+<li>Constant mental checklists and what if thoughts</li>
+<li>Guilt when resting or doing less</li>
+<li>Frustration when others do not meet your standards</li>
+<li>Physical tension, jaw clenching, or stomach discomfort</li>
+<li>Overfunctioning in relationships while feeling unseen</li>
+</ul>
+
+<h2>Why control feels safer than vulnerability</h2>
+<p>The urge to control often starts as a survival response. If you grew up in environments where mistakes had consequences or love felt conditional, control became protection. The nervous system learned that safety meant staying on top of everything. Letting go can trigger anxiety because it feels like returning to danger, even when no danger is present.</p>
+
+<h2>How therapy helps you release control safely</h2>
+<p>At Better Lives, Building Tribes, we help clients across Colorado recognize the link between anxiety and control. Therapy is not about eliminating responsibility. It is about helping your body feel safe enough to rest, share, and trust again. Healing happens when you replace control with confidence.</p>
+
+<h3>1. Understand what control protects</h3>
+<p>In therapy, we begin by exploring the purpose of control. Often, it protects from fear of loss, rejection, or chaos. When you see control as protection rather than a flaw, you can begin to meet the fear underneath it with compassion instead of judgment.</p>
+
+<h3>2. Learn body-based regulation</h3>
+<p>Anxiety lives in the body. We use grounding, breathwork, and mindfulness to teach the nervous system how to downshift from constant alertness. As your body learns safety, your mind feels less pressure to manage everything externally.</p>
+
+<h3>3. Practice shared responsibility</h3>
+<p>Letting go does not mean losing control completely. It means allowing safe others to help carry the load. In therapy, we practice asking for help, delegating tasks, and setting boundaries that prioritize your wellbeing. You learn that support does not equal weakness.</p>
+
+<h3>4. Challenge perfectionistic thinking</h3>
+<p>Perfectionism often pairs with control. Therapy helps you notice black and white thinking and practice flexibility. You learn to say, this is good enough for now, and trust that imperfection does not equal failure.</p>
+
+<h2>Everyday practices for easing control-based anxiety</h2>
+<ul>
+<li><strong>Schedule pauses.</strong> Take brief breaks between tasks. During pauses, notice your breath and physical sensations.</li>
+<li><strong>Use gentle reminders.</strong> Post calming notes such as, it is safe to slow down, or not everything needs to be fixed today.</li>
+<li><strong>Delegate one task.</strong> Choose one responsibility each week to share or postpone. Track how your body feels when you let go.</li>
+<li><strong>Limit multitasking.</strong> Focus on one thing at a time to reduce overwhelm and create presence.</li>
+<li><strong>End the day intentionally.</strong> Write down what went well instead of what still needs to be done. This teaches your brain to rest.</li>
+</ul>
+
+<h2>The connection between control and relationships</h2>
+<p>Control can create tension in relationships. When one partner manages everything, the other can feel unnecessary, and resentment can grow on both sides. Therapy helps couples understand that control often comes from fear, not criticism. Learning to communicate needs with honesty builds connection rather than conflict.</p>
+
+<h2>Therapy for anxiety in Colorado</h2>
+<p>Better Lives, Building Tribes offers therapy for anxiety, perfectionism, and burnout throughout Colorado, including online therapy for Colorado residents. Whether you are in Denver, Boulder, or a rural area, therapy helps you learn new ways to calm your body, set realistic expectations, and create peace without overfunctioning.</p>
+
+<h2>Letting go is not losing control</h2>
+<p>Releasing control does not mean chaos. It means trusting that you can handle life as it unfolds. Therapy gives you the tools to respond with calm rather than react with fear. Over time, you realize that peace feels better than predictability.</p>
+
+<h2>Take the next step</h2>
+<p><strong>If you are ready to begin your next chapter, <a href="https://betterlivesbuildingtribes.com/schedulewithdrmeaghan/">Schedule with Dr. Meaghan</a> or call <a href="tel:+13035789317">(303) 578-9317</a>.</strong></p>
+      </div>
+
+      <footer class="blog-post__footer">
+        <Button href="/updates" variant="outline">Back to Updates</Button>
+        <Button href="/schedule" variant="primary">Schedule a Consultation</Button>
+      </footer>
+    </article>
+  </Section>
+</PageLayout>
+
+<style>
+  .blog-post {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .blog-post__header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .blog-post__category {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__header h1 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__date {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+  }
+
+  .blog-post__author {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    font-style: italic;
+  }
+
+  .blog-post__content {
+    line-height: 1.8;
+    font-size: var(--font-size-md);
+  }
+
+  .blog-post__content :global(h2) {
+    color: var(--color-teal);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .blog-post__content :global(h3) {
+    color: var(--color-heading);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__content :global(p) {
+    margin-bottom: var(--space-md);
+  }
+
+  .blog-post__content :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .blog-post__content :global(ul),
+  .blog-post__content :global(ol) {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-lg);
+  }
+
+  .blog-post__content :global(li) {
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__footer {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-gray-bg);
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+  }
+</style>

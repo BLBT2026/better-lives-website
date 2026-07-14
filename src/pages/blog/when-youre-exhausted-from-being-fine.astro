@@ -1,0 +1,171 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import Button from '../../components/ui/Button.astro';
+
+const title = "When You’re Exhausted from Being \"Fine\": Signs It’s Time to Heal";
+const date = "2025-04-30";
+const category = "Trauma &amp; Healing";
+---
+
+<PageLayout title={`${title} | Better Lives Building Tribes`} description="How many times have you answered “I’m fine” when you were anything but fine. The phrase is so automatic that it can become a way of life. You keep showing up, doing what needs to be done, and maintain">
+  <Section padding="lg">
+    <article class="blog-post">
+      <header class="blog-post__header">
+        <span class="blog-post__category">{category}</span>
+        <h1>{title}</h1>
+        <time class="blog-post__date" datetime={date}>
+          {new Date(date + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+        <p class="blog-post__author">Dr. Meaghan Rice, PsyD</p>
+      </header>
+
+      <div class="blog-post__content">
+        <p>How many times have you answered “I’m fine” when you were anything but fine. The phrase is so automatic that it can become a way of life. You keep showing up, doing what needs to be done, and maintaining composure while feeling empty or tense inside. Being fine is not the same as being okay. If you are exhausted from holding it all together, it might be time to consider what healing could look like.</p>
+
+<h2>What it means to live in survival mode</h2>
+<p>Survival mode is not a character flaw. It is the nervous system’s way of keeping you functioning through stress, grief, or trauma. In survival mode, your body runs on adrenaline. You push through the day, suppress emotions, and focus on tasks. This pattern can help you survive temporary crises, but when it becomes long term, it drains energy and emotion alike.</p>
+
+<p>People in survival mode often describe feeling detached or robotic. You might go through the motions but struggle to feel joy or connection. You may notice you are more irritable, anxious, or numb. These are not signs of weakness. They are messages from your body saying, “I need something different.”</p>
+
+<h2>Common signs you might be “fine” but not okay</h2>
+<ul>
+<li>Constant fatigue even after rest</li>
+<li>Difficulty identifying what you feel</li>
+<li>Avoiding conversations about emotions</li>
+<li>Feeling guilty when you slow down</li>
+<li>Chronic muscle tension or headaches</li>
+<li>Overcommitting to avoid discomfort</li>
+<li>A sense of emptiness or disconnection from yourself</li>
+</ul>
+
+<h2>Why healing feels harder than coping</h2>
+<p>Coping helps you get through the day. Healing asks you to slow down and notice what hurts. That can feel overwhelming, especially if you have spent years protecting yourself by staying busy or strong. Therapy helps you approach this process gradually. The goal is not to relive pain but to understand it, so your body and mind can stop treating the present as if it were the past.</p>
+
+<h2>The emotional toll of pretending everything is fine</h2>
+<p>When you deny pain, it does not disappear; it relocates. It can show up as chronic tension, irritability, burnout, or feeling numb. Pretending to be fine isolates you from others who could help. Many people come to therapy saying, “I don’t even know what I feel anymore.” Healing begins with giving yourself permission to be honest about your internal experience without judgment.</p>
+
+<h2>How therapy helps when you are tired of being strong</h2>
+<p>At Better Lives, Building Tribes, we work with individuals across Colorado who have learned to function at the expense of feeling. Therapy offers a space where you can lay down the burden of composure. Together we rebuild awareness, regulation, and trust in your body’s capacity to rest and recover.</p>
+
+<h3>1. Reconnecting with your emotions</h3>
+<p>Emotions are not weaknesses. They are signals. In therapy, you learn how to identify emotions in your body—tightness in your chest, heaviness in your stomach—and label them with curiosity rather than judgment. This builds emotional literacy and reduces anxiety.</p>
+
+<h3>2. Releasing the belief that calm equals danger</h3>
+<p>Many people who grew up in chaotic or high pressure environments equate calm with vulnerability. Therapy helps retrain your nervous system to tolerate rest and quiet without fear. Over time, stillness becomes safe rather than suspicious.</p>
+
+<h3>3. Learning to receive support</h3>
+<p>If you are used to being the caretaker or the dependable one, asking for help may feel uncomfortable. Therapy provides a practice ground for receiving care without apology. Healing happens in connection, not isolation.</p>
+
+<h3>4. Setting boundaries that protect recovery</h3>
+<p>Boundaries are not about pushing people away. They are about preserving energy for what matters most. In therapy, you learn to communicate limits clearly and kindly, which helps reduce resentment and burnout.</p>
+
+<h2>Everyday practices that support healing</h2>
+<ul>
+<li><strong>Check in with your body.</strong> Several times a day, pause and ask, “What is my body feeling right now.”</li>
+<li><strong>Let someone in.</strong> Share honestly with one trusted person instead of pretending you are fine.</li>
+<li><strong>Allow rest.</strong> Rest is not earned; it is required. Schedule moments of recovery the same way you would a meeting.</li>
+<li><strong>Gentle movement.</strong> Walk, stretch, or breathe deeply to signal safety to your nervous system.</li>
+<li><strong>Soften your self talk.</strong> Replace “I should be handling this better” with “I am doing my best with what I have.”</li>
+</ul>
+
+<h2>When to reach out</h2>
+<p>If you notice that being fine feels more like acting, it might be time to seek support. Therapy can help you reconnect with your authentic self and create space for genuine well-being. Healing is not about breaking down; it is about breaking through the patterns that keep you distant from your own life.</p>
+
+<h2>Therapy in Colorado</h2>
+<p>Better Lives, Building Tribes provides therapy in Colorado for individuals who are ready to move from surviving to thriving. Whether you live in Denver, Boulder, or the mountain regions, online therapy for Colorado residents offers flexible options to fit your life. Support is available, even if you are not sure where to begin.</p>
+
+<h2>Start your healing journey</h2>
+<p><strong>If you are ready to begin your next chapter, <a href="https://betterlivesbuildingtribes.com/schedulewithdrmeaghan/">Schedule with Dr. Meaghan</a> or call <a href="tel:+13035789317">(303) 578-9317</a>.</strong></p>
+      </div>
+
+      <footer class="blog-post__footer">
+        <Button href="/updates" variant="outline">Back to Updates</Button>
+        <Button href="/schedule" variant="primary">Schedule a Consultation</Button>
+      </footer>
+    </article>
+  </Section>
+</PageLayout>
+
+<style>
+  .blog-post {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .blog-post__header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .blog-post__category {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__header h1 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__date {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+  }
+
+  .blog-post__author {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    font-style: italic;
+  }
+
+  .blog-post__content {
+    line-height: 1.8;
+    font-size: var(--font-size-md);
+  }
+
+  .blog-post__content :global(h2) {
+    color: var(--color-teal);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .blog-post__content :global(h3) {
+    color: var(--color-heading);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__content :global(p) {
+    margin-bottom: var(--space-md);
+  }
+
+  .blog-post__content :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .blog-post__content :global(ul),
+  .blog-post__content :global(ol) {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-lg);
+  }
+
+  .blog-post__content :global(li) {
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__footer {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-gray-bg);
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+  }
+</style>

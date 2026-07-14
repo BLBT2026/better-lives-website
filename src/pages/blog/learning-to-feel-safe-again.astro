@@ -1,0 +1,170 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import Button from '../../components/ui/Button.astro';
+
+const title = "Learning to Feel Safe Again: What Trauma-Informed Therapy Really Means";
+const date = "2025-04-02";
+const category = "Trauma &amp; Healing";
+---
+
+<PageLayout title={`${title} | Better Lives Building Tribes`} description="Healing from trauma does not begin with talking about what happened. It begins with feeling safe enough to talk at all. Trauma informed therapy recognizes that your body, mind, and relationships have ">
+  <Section padding="lg">
+    <article class="blog-post">
+      <header class="blog-post__header">
+        <span class="blog-post__category">{category}</span>
+        <h1>{title}</h1>
+        <time class="blog-post__date" datetime={date}>
+          {new Date(date + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+        <p class="blog-post__author">Dr. Meaghan Rice, PsyD</p>
+      </header>
+
+      <div class="blog-post__content">
+        <p>Healing from trauma does not begin with talking about what happened. It begins with feeling safe enough to talk at all. Trauma informed therapy recognizes that your body, mind, and relationships have adapted to survive. Safety, trust, and control must come first. When these foundations are in place, healing follows naturally.</p>
+
+<h2>What trauma informed therapy means</h2>
+<p>Trauma informed therapy is not a specific technique. It is an approach that recognizes the impact of trauma on every part of a person’s life. It focuses on choice, empowerment, and collaboration rather than pushing for disclosure or change before you are ready. The therapist’s role is to help you rebuild a sense of safety both in your body and in relationships.</p>
+
+<h2>Understanding how trauma affects the body and brain</h2>
+<p>When trauma occurs, the brain’s alarm system becomes overactive. The amygdala, which detects threat, stays alert even after danger has passed. The prefrontal cortex, which helps with reasoning and decision making, can go offline during stress. This makes it hard to concentrate or trust that you are safe. Over time, these patterns can cause anxiety, hypervigilance, emotional numbing, or chronic exhaustion.</p>
+
+<p>In therapy, we use tools that help the nervous system learn what safety feels like again. These include grounding techniques, gentle body awareness, and mindfulness practices that bring you into the present moment. The goal is not to forget trauma but to restore your ability to live in the present without being pulled back into the past.</p>
+
+<h2>Signs you might benefit from trauma informed care</h2>
+<ul>
+<li>Difficulty trusting others or feeling close to people</li>
+<li>Feeling on edge, jumpy, or easily startled</li>
+<li>Emotional numbness or disconnection from your body</li>
+<li>Recurring nightmares or intrusive thoughts</li>
+<li>Chronic health issues with no clear cause</li>
+<li>Feeling responsible for things that were never your fault</li>
+<li>Overreacting to small triggers or shutting down during conflict</li>
+</ul>
+
+<h2>What happens in trauma informed therapy</h2>
+<p>Every session moves at your pace. You are the expert on your story. The therapist is a guide who helps you notice patterns, learn regulation skills, and build confidence in your ability to handle emotion. Therapy focuses on three main stages: stabilization, processing, and integration.</p>
+
+<h3>1. Stabilization</h3>
+<p>We begin with safety and grounding. You learn how to recognize when your body is activated and what helps it return to calm. Tools include breathwork, sensory exercises, and identifying supportive people and routines. Stabilization helps you feel in control before touching painful material.</p>
+
+<h3>2. Processing</h3>
+<p>When you are ready, we gently process traumatic memories. This can involve narrative work, eye movement desensitization and reprocessing (EMDR), or body based techniques. The goal is to refile memories in a way that no longer triggers the same level of distress. You learn that remembering is not reliving.</p>
+
+<h3>3. Integration</h3>
+<p>Integration means bringing your new awareness into daily life. You practice boundaries, connect with safe people, and allow joy and curiosity to return. The focus shifts from survival to growth. You begin to trust that you can handle life as it unfolds.</p>
+
+<h2>Why trauma informed care matters</h2>
+<p>Without safety, therapy can accidentally replicate power dynamics that resemble trauma. Trauma informed therapists actively avoid this by ensuring you have choice in what you discuss and how fast you move. They emphasize respect, transparency, and collaboration. The result is a relationship built on trust, not authority.</p>
+
+<p>Many clients tell me that trauma informed therapy feels different right away. It is less about fixing and more about understanding. It is about being met where you are, not where you think you should be.</p>
+
+<h2>Trauma informed therapy in Colorado</h2>
+<p>At Better Lives, Building Tribes, we provide trauma informed therapy throughout Colorado, including online therapy for Colorado residents. Whether you live in Denver, Boulder, or a rural area, therapy offers a confidential and compassionate space to rebuild safety. Sessions are customized to your pace and goals. You do not need to have a diagnosis to begin. All that is required is the desire for change and a safe place to start.</p>
+
+<h2>Practical ways to support safety between sessions</h2>
+<ul>
+<li><strong>Establish a daily grounding routine.</strong> Begin and end your day with slow breathing or a brief mindfulness practice. This helps signal to your body that it is safe to rest.</li>
+<li><strong>Stay connected.</strong> Choose one or two trusted people to reach out to when you feel activated. Connection is the antidote to isolation.</li>
+<li><strong>Move gently.</strong> Simple movement like walking, stretching, or yoga helps release tension and support regulation.</li>
+<li><strong>Protect your nervous system.</strong> Limit exposure to distressing media or environments that keep your body on alert.</li>
+<li><strong>Celebrate small signs of progress.</strong> Noticing that you slept better, spoke kindly to yourself, or reached out for support are all victories worth honoring.</li>
+</ul>
+
+<h2>When to seek help</h2>
+<p>If you find yourself stuck in patterns of anxiety, avoidance, or emotional shutdown, it might be time to reach out. Trauma informed therapy helps you reconnect with your body’s natural capacity to heal. You do not have to carry the past alone. Healing does not mean forgetting. It means reclaiming your sense of agency and safety.</p>
+
+<h2>Begin your healing journey</h2>
+<p><strong>If you are ready to begin your next chapter, <a href="https://betterlivesbuildingtribes.com/schedulewithdrmeaghan/">Schedule with Dr. Meaghan</a> or call <a href="tel:+13035789317">(303) 578-9317</a>.</strong></p>
+      </div>
+
+      <footer class="blog-post__footer">
+        <Button href="/updates" variant="outline">Back to Updates</Button>
+        <Button href="/schedule" variant="primary">Schedule a Consultation</Button>
+      </footer>
+    </article>
+  </Section>
+</PageLayout>
+
+<style>
+  .blog-post {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .blog-post__header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .blog-post__category {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__header h1 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__date {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+  }
+
+  .blog-post__author {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    font-style: italic;
+  }
+
+  .blog-post__content {
+    line-height: 1.8;
+    font-size: var(--font-size-md);
+  }
+
+  .blog-post__content :global(h2) {
+    color: var(--color-teal);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .blog-post__content :global(h3) {
+    color: var(--color-heading);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__content :global(p) {
+    margin-bottom: var(--space-md);
+  }
+
+  .blog-post__content :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .blog-post__content :global(ul),
+  .blog-post__content :global(ol) {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-lg);
+  }
+
+  .blog-post__content :global(li) {
+    margin-bottom: var(--space-xs);
+  }
+
+  .blog-post__footer {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-gray-bg);
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+  }
+</style>

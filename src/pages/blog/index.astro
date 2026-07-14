@@ -1,0 +1,40 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import BlogFilter from '../../components/blog/BlogFilter';
+import posts from '../../data/posts.json';
+import '../../components/blog/BlogFilter.css';
+---
+
+<PageLayout
+  title="Blog | Better Lives Building Tribes"
+  description="Explore articles on mental health, therapy, relationships, and wellness from Better Lives Building Tribes."
+>
+  <Section padding="lg">
+    <div class="page-header">
+      <h1>Blog</h1>
+      <p>Explore our articles on mental health, therapy, and building resilience.</p>
+    </div>
+  </Section>
+
+  <Section background="gray" padding="lg">
+    <BlogFilter posts={posts} client:load />
+  </Section>
+</PageLayout>
+
+<style>
+  .page-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .page-header h1 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-xs);
+  }
+
+  .page-header p {
+    line-height: 1.7;
+  }
+</style>

@@ -1,0 +1,65 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import BlogFilter from '../../../components/blog/BlogFilter';
+import allPosts from '../../../data/posts.json';
+import '../../../components/blog/BlogFilter.css';
+
+const category = 'Mood & Depression';
+const categoryPosts = allPosts.filter((p) => p.categories.includes(category));
+---
+
+<PageLayout
+  title={`${category} | Blog | Better Lives Building Tribes`}
+  description={`Articles about ${category.toLowerCase()} from Better Lives Building Tribes.`}
+>
+  <Section padding="lg">
+    <div class="page-header">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/blog">Blog</a> <span aria-hidden="true">/</span> <span>{category}</span>
+      </nav>
+      <h1>{category}</h1>
+      <p>{categoryPosts.length} article{categoryPosts.length !== 1 ? 's' : ''}</p>
+    </div>
+  </Section>
+
+  <Section background="gray" padding="lg">
+    <BlogFilter posts={categoryPosts} client:load />
+  </Section>
+</PageLayout>
+
+<style>
+  .page-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .breadcrumb {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-sm);
+  }
+
+  .breadcrumb a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--color-teal);
+  }
+
+  .breadcrumb span {
+    color: var(--color-text);
+    margin: 0 0.25rem;
+  }
+
+  .page-header h1 {
+    color: var(--color-teal);
+    margin-bottom: var(--space-xs);
+  }
+
+  .page-header p {
+    color: var(--color-text);
+  }
+</style>
