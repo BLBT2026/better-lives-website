@@ -6,9 +6,43 @@ import Button from '../../components/ui/Button.astro';
 const title = "Codependency And Boundaries: Learning To Love Without Losing Yourself In Colorado";
 const date = "2025-09-15";
 const category = "Article";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'PsyD, LPC',
+      url: 'https://betterlivesbuildingtribes.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Better Lives Building Tribes',
+      url: 'https://betterlivesbuildingtribes.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://betterlivesbuildingtribes.com/blog/codependency-boundaries-relationships-colorado`,
+    },
+    articleSection: category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
 ---
 
-<PageLayout title={`${title} | Better Lives Building Tribes`} description="You have spent your whole life taking care of other people. You prioritize their needs, fix their problems, and manage their emotions. You feel responsible for their happiness, and when they are strug">
+<PageLayout title={`${title} | Better Lives Building Tribes`} schema={schema} description="You have spent your whole life taking care of other people. You prioritize their needs, fix their problems, and manage their emotions. You feel responsible for their happiness, and when they are strug">
   <Section padding="lg">
     <article class="blog-post">
       <header class="blog-post__header">

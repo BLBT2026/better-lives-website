@@ -4,10 +4,39 @@ import Section from '../../components/ui/Section.astro';
 import Button from '../../components/ui/Button.astro';
 import ServiceCard from '../../components/cards/ServiceCard.astro';
 import { services } from '../../data/services';
+
+const servicesSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Therapy Services',
+    description: 'Explore our therapy services including mindfulness-based therapy, culturally sensitive therapy, trauma recovery, and more.',
+    url: 'https://betterlivesbuildingtribes.com/services',
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: services.length,
+      itemListElement: services.map((s, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `https://betterlivesbuildingtribes.com/services/${s.slug}`,
+        name: s.title,
+      })),
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Services' },
+    ],
+  },
+];
 ---
 
 <PageLayout
   title="Services | Better Lives Building Tribes"
+  schema={servicesSchema}
   description="Explore our therapy services including mindfulness-based therapy, culturally sensitive therapy, trauma recovery, and more."
 >
   <Section padding="lg">

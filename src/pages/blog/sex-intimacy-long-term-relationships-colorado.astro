@@ -6,9 +6,43 @@ import Button from '../../components/ui/Button.astro';
 const title = "When Sex Feels Disconnected: Rebuilding Intimacy And Desire In Long Term Relationships In Colorado";
 const date = "2025-06-16";
 const category = "Article";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'PsyD, LPC',
+      url: 'https://betterlivesbuildingtribes.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Better Lives Building Tribes',
+      url: 'https://betterlivesbuildingtribes.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://betterlivesbuildingtribes.com/blog/sex-intimacy-long-term-relationships-colorado`,
+    },
+    articleSection: category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
 ---
 
-<PageLayout title={`${title} | Better Lives Building Tribes`} description="You remember when sex felt easy, spontaneous, and connected. Now it feels like another item on the to do list. Or maybe it does not happen at all. You lie next to your partner at night and feel the di">
+<PageLayout title={`${title} | Better Lives Building Tribes`} schema={schema} description="You remember when sex felt easy, spontaneous, and connected. Now it feels like another item on the to do list. Or maybe it does not happen at all. You lie next to your partner at night and feel the di">
   <Section padding="lg">
     <article class="blog-post">
       <header class="blog-post__header">

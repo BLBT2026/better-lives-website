@@ -3,11 +3,35 @@ import PageLayout from '../layouts/PageLayout.astro';
 import Section from '../components/ui/Section.astro';
 import ContactForm from '../components/forms/ContactForm.astro';
 import Icon from '../components/ui/Icon.astro';
+
+const contactSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact Better Lives Building Tribes',
+    url: 'https://betterlivesbuildingtribes.com/contact',
+    mainEntity: {
+      '@type': 'MentalHealthBusiness',
+      name: 'Better Lives Building Tribes',
+      telephone: '+1-720-295-1508',
+      email: 'BetterLives.BuildingTribes@gmail.com',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Contact' },
+    ],
+  },
+];
 ---
 
 <PageLayout
   title="Contact | Better Lives Building Tribes"
   description="Get in touch with Better Lives Building Tribes. Call (720) 295-1508 or send us a message."
+  schema={contactSchema}
 >
   <Section padding="lg">
     <div class="contact-layout">

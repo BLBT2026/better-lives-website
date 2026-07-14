@@ -6,9 +6,43 @@ import Button from '../../components/ui/Button.astro';
 const title = "When You Love Someone With Depression: Supporting Your Partner Without Losing Yourself In Colorado";
 const date = "2025-07-28";
 const category = "Article";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'PsyD, LPC',
+      url: 'https://betterlivesbuildingtribes.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Better Lives Building Tribes',
+      url: 'https://betterlivesbuildingtribes.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://betterlivesbuildingtribes.com/blog/loving-someone-with-depression-supporting-partner-colorado`,
+    },
+    articleSection: category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
 ---
 
-<PageLayout title={`${title} | Better Lives Building Tribes`} description="You love your partner, but lately you feel helpless watching them struggle. They are withdrawn, exhausted, or numb. Nothing you do seems to help. You try to cheer them up, solve their problems, or giv">
+<PageLayout title={`${title} | Better Lives Building Tribes`} schema={schema} description="You love your partner, but lately you feel helpless watching them struggle. They are withdrawn, exhausted, or numb. Nothing you do seems to help. You try to cheer them up, solve their problems, or giv">
   <Section padding="lg">
     <article class="blog-post">
       <header class="blog-post__header">

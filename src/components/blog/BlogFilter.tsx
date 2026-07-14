@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'preact/hooks';
+import { useState, useMemo, useCallback } from 'preact/hooks';
 
 interface Post {
   slug: string;
@@ -7,6 +7,8 @@ interface Post {
   date: string;
   categories: string[];
   tags: string[];
+  image: string | null;
+  imageUrl?: string;
 }
 
 interface Props {
@@ -31,6 +33,7 @@ export default function BlogFilter({ posts }: Props) {
   const [query, setQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const categories = useMemo(() => {
     const counts = new Map<string, number>();
@@ -101,8 +104,24 @@ export default function BlogFilter({ posts }: Props) {
           />
         </div>
 
+        {/* Mobile filter toggle */}
+        <button
+          class="bf-filter-toggle"
+          onClick={() => setFiltersOpen(!filtersOpen)}
+          aria-expanded={filtersOpen}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+          </svg>
+          <span>Filters</span>
+          {activeCategory !== 'all' && <span class="bf-filter-badge">1</span>}
+          <svg class={`bf-filter-chevron${filtersOpen ? ' open' : ''}`} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+
         {/* Category pills */}
-        <div class="bf-filters" role="group" aria-label="Filter by category">
+        <div class={`bf-filters${filtersOpen ? ' open' : ''}`} role="group" aria-label="Filter by category">
           <button
             class={`bf-pill${activeCategory === 'all' ? ' active' : ''}`}
             onClick={() => handleCategoryClick('all')}
@@ -125,26 +144,39 @@ export default function BlogFilter({ posts }: Props) {
       {filtered.length > 0 ? (
         <>
           <div class="bf-grid" id="blog-grid">
-            {paginated.map((post) => (
+            {paginated.map((post, i) => (
               <article class="bf-card" key={post.slug}>
-                <div class="bf-card__cats">
-                  {post.categories.map((cat) => (
-                    <a
-                      key={cat}
-                      href={`/blog/category/${slugifyCategory(cat)}`}
-                      class="bf-card__cat"
-                    >
-                      {cat}
-                    </a>
-                  ))}
+                {post.imageUrl && (
+                  <a href={`/blog/${post.slug}`} class="bf-card__img-link">
+                    <img
+                      src={post.imageUrl}
+                      alt=""
+                      class="bf-card__img"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                )}
+                <div class="bf-card__body">
+                  <div class="bf-card__cats">
+                    {post.categories.map((cat) => (
+                      <a
+                        key={cat}
+                        href={`/blog/category/${slugifyCategory(cat)}`}
+                        class="bf-card__cat"
+                      >
+                        {cat}
+                      </a>
+                    ))}
+                  </div>
+                  <h3 class="bf-card__title">
+                    <a href={`/blog/${post.slug}`}>{post.title}</a>
+                  </h3>
+                  <p class="bf-card__excerpt">{post.excerpt}</p>
+                  <time class="bf-card__date" dateTime={post.date}>
+                    {formatDate(post.date)}
+                  </time>
                 </div>
-                <h3 class="bf-card__title">
-                  <a href={`/blog/${post.slug}`}>{post.title}</a>
-                </h3>
-                <p class="bf-card__excerpt">{post.excerpt}</p>
-                <time class="bf-card__date" dateTime={post.date}>
-                  {formatDate(post.date)}
-                </time>
               </article>
             ))}
           </div>

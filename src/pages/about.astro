@@ -6,10 +6,56 @@ import { Image } from 'astro:assets';
 
 import drRicePhoto from '../assets/images/general/dr_meaghan_rice_psyd-lpc-1.jpg';
 import illustration from '../assets/images/illustrations/psychologist-illustration-04-1.png';
+
+const aboutSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    dateModified: '2026-07-14',
+    mainEntity: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'Doctor of Psychology, Licensed Professional Counselor',
+      url: 'https://betterlivesbuildingtribes.com/about',
+      worksFor: {
+        '@type': 'MentalHealthBusiness',
+        name: 'Better Lives Building Tribes',
+        url: 'https://betterlivesbuildingtribes.com',
+      },
+      alumniOf: [
+        { '@type': 'CollegeOrUniversity', name: 'University of Arizona' },
+        { '@type': 'CollegeOrUniversity', name: 'University of Denver' },
+      ],
+      knowsAbout: [
+        'Relationships', 'Personal Empowerment', 'Wellness', 'Communication',
+        'Resilience', 'Trauma Recovery', 'EMDR', 'Mindfulness-Based Therapy',
+      ],
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'PsyD' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'LPC' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'NBCC' },
+        { '@type': 'EducationalOccupationalCredential', credentialCategory: 'ACS' },
+      ],
+      sameAs: [
+        'https://www.instagram.com/dr_meaghan/',
+        'https://www.tiktok.com/@dr_meaghan',
+      ],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'About' },
+    ],
+  },
+];
 ---
 
 <PageLayout
   title="About | Better Lives Building Tribes"
+  schema={aboutSchema}
   description="Learn about Dr. Meaghan Rice, PsyD, LPC — founder of Better Lives Building Tribes with over 10 years of clinical experience."
 >
   <Section padding="lg">

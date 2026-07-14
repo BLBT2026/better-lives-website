@@ -6,9 +6,43 @@ import Button from '../../components/ui/Button.astro';
 const title = "When You’re Exhausted from Being \"Fine\": Signs It’s Time to Heal";
 const date = "2025-04-30";
 const category = "Trauma &amp; Healing";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'PsyD, LPC',
+      url: 'https://betterlivesbuildingtribes.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Better Lives Building Tribes',
+      url: 'https://betterlivesbuildingtribes.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://betterlivesbuildingtribes.com/blog/when-youre-exhausted-from-being-fine`,
+    },
+    articleSection: category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
 ---
 
-<PageLayout title={`${title} | Better Lives Building Tribes`} description="How many times have you answered “I’m fine” when you were anything but fine. The phrase is so automatic that it can become a way of life. You keep showing up, doing what needs to be done, and maintain">
+<PageLayout title={`${title} | Better Lives Building Tribes`} schema={schema} description="How many times have you answered “I’m fine” when you were anything but fine. The phrase is so automatic that it can become a way of life. You keep showing up, doing what needs to be done, and maintain">
   <Section padding="lg">
     <article class="blog-post">
       <header class="blog-post__header">

@@ -18,7 +18,30 @@ const navItems: NavItem[] = [
     label: 'Services',
     href: '/services',
     children: [
+      { label: 'Mindfulness-Based Therapy', href: '/services/mindfulness-based-therapy' },
+      { label: 'Culturally Sensitive Therapy', href: '/services/culturally-sensitive-therapy' },
+      { label: 'Trauma Recovery', href: '/services/trauma-recovery' },
+      { label: 'Anxiety Therapy', href: '/services/anxiety-therapy' },
+      { label: 'IFS Therapy', href: '/services/internal-family-systems-therapy' },
+      { label: 'DBT', href: '/services/dialectical-behavior-therapy' },
+      { label: 'Trauma-Focused Therapy', href: '/services/trauma-focused-therapy' },
+      { label: 'Couples Therapy', href: '/services/couples-therapy' },
+      { label: 'Career & Personal Growth', href: '/services/career-personal-growth-therapy' },
+      { label: 'CBT', href: '/services/cognitive-behavioral-therapy' },
+      { label: 'EMDR Therapy', href: '/services/emdr-therapy' },
+      { label: 'Depression Therapy', href: '/services/depression-therapy' },
+      { label: 'Holistic Healing', href: '/services/holistic-healing' },
+      { label: 'Personalized Therapy', href: '/services/personalized-therapy' },
+      { label: 'Divorce or Breakup Therapy', href: '/services/divorce-breakup-therapy' },
+      { label: 'Interpersonal Therapy', href: '/services/interpersonal-therapy' },
+      { label: 'ACT', href: '/services/acceptance-commitment-therapy' },
+      { label: 'Adlerian Therapy', href: '/services/adlerian-therapy' },
+      { label: 'Behavioral Therapy', href: '/services/behavioral-therapy' },
+      { label: 'Psychodynamic Therapy', href: '/services/psychodynamic-therapy' },
+      { label: 'Hypnotherapy', href: '/services/hypnotherapy' },
+      { label: 'Substance Abuse Counseling', href: '/services/substance-abuse-counseling' },
       { label: 'Grief and Loss', href: '/services/grief-and-loss' },
+      { label: 'Licensed Professional Counselor', href: '/services/licensed-professional-counselor' },
     ],
   },
   { label: 'Our Team', href: '/our-team' },
@@ -94,8 +117,11 @@ const rightNav = navItems.slice(4);
         <Image src={logo} alt="Better Lives Building Tribes" width={160} height={68} loading="eager" />
       </a>
       <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false" id="mobile-toggle">
-        <Icon name="menu" size={24} class="icon-menu" />
-        <Icon name="close" size={24} class="icon-close" />
+        <span class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
       </button>
     </div>
 
@@ -222,27 +248,31 @@ const rightNav = navItems.slice(4);
   }
 
   /* Dropdown */
-  .has-dropdown:hover .dropdown,
-  .has-dropdown:focus-within .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
 
   .dropdown {
     position: absolute;
     top: 100%;
-    left: 0;
-    min-width: 180px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    min-width: 480px;
     background: var(--color-white);
-    box-shadow: var(--shadow-md);
-    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius-md);
     list-style: none;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-8px);
     transition: all var(--transition-fast);
     z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0.5rem 0;
+  }
+
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
   }
 
   .dropdown-link {
@@ -270,20 +300,38 @@ const rightNav = navItems.slice(4);
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--color-text-dark);
     padding: 0.5rem;
   }
 
-  .mobile-toggle .icon-close {
-    display: none;
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 24px;
+    height: 24px;
   }
 
-  .mobile-toggle[aria-expanded='true'] .icon-menu {
-    display: none;
-  }
-
-  .mobile-toggle[aria-expanded='true'] .icon-close {
+  .hamburger span {
     display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--color-text-dark);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  .mobile-toggle[aria-expanded='true'] .hamburger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .mobile-toggle[aria-expanded='true'] .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-toggle[aria-expanded='true'] .hamburger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   /* Mobile nav */

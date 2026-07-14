@@ -6,9 +6,43 @@ import Button from '../../components/ui/Button.astro';
 const title = "Building Genuine Connection In Therapy Groups: Why Group Therapy Works For Belonging In Colorado";
 const date = "2025-12-08";
 const category = "Article";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'PsyD, LPC',
+      url: 'https://betterlivesbuildingtribes.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Better Lives Building Tribes',
+      url: 'https://betterlivesbuildingtribes.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://betterlivesbuildingtribes.com/blog/group-therapy-connection-belonging-colorado`,
+    },
+    articleSection: category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
 ---
 
-<PageLayout title={`${title} | Better Lives Building Tribes`} description="You have been considering therapy for loneliness, isolation, or difficulty connecting with others. Your therapist suggests group therapy. Your first thought is \"Absolutely not.\" The idea of being vuln">
+<PageLayout title={`${title} | Better Lives Building Tribes`} schema={schema} description="You have been considering therapy for loneliness, isolation, or difficulty connecting with others. Your therapist suggests group therapy. Your first thought is \"Absolutely not.\" The idea of being vuln">
   <Section padding="lg">
     <article class="blog-post">
       <header class="blog-post__header">

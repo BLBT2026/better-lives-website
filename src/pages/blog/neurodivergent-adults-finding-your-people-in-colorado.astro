@@ -6,9 +6,43 @@ import Button from '../../components/ui/Button.astro';
 const title = "Neurodivergent Adults And Finding Your People In Colorado: Belonging When Your Brain Feels Different";
 const date = "2026-06-22";
 const category = "Article";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'PsyD, LPC',
+      url: 'https://betterlivesbuildingtribes.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Better Lives Building Tribes',
+      url: 'https://betterlivesbuildingtribes.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://betterlivesbuildingtribes.com/blog/neurodivergent-adults-finding-your-people-in-colorado`,
+    },
+    articleSection: category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
 ---
 
-<PageLayout title={`${title} | Better Lives Building Tribes`} description="Maybe you have always felt a little out of step with the people around you. You notice details others miss, get intensely focused on your interests, or feel completely drained after social events that">
+<PageLayout title={`${title} | Better Lives Building Tribes`} schema={schema} description="Maybe you have always felt a little out of step with the people around you. You notice details others miss, get intensely focused on your interests, or feel completely drained after social events that">
   <Section padding="lg">
     <article class="blog-post">
       <header class="blog-post__header">

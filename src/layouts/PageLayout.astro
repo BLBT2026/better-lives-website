@@ -8,12 +8,13 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description, ogImage } = Astro.props;
+const { title, description, ogImage, schema } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} ogImage={ogImage}>
+<BaseLayout title={title} description={description} ogImage={ogImage} schema={schema}>
   <TopBar />
   <Header />
   <main id="main-content">

@@ -7,9 +7,38 @@ import '../../../components/blog/BlogFilter.css';
 
 const category = 'Relationships & Couples';
 const categoryPosts = allPosts.filter((p) => p.categories.includes(category));
+const categorySchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: category,
+    description: `Articles about ${category.toLowerCase()} from Better Lives Building Tribes.`,
+    url: `https://betterlivesbuildingtribes.com/blog/category/relationships-and-couples`,
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: categoryPosts.length,
+      itemListElement: categoryPosts.slice(0, 20).map((post, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `https://betterlivesbuildingtribes.com/blog/${post.slug}`,
+        name: post.title,
+      })),
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: category },
+    ],
+  },
+];
 ---
 
 <PageLayout
+  schema={categorySchema}
   title={`${category} | Blog | Better Lives Building Tribes`}
   description={`Articles about ${category.toLowerCase()} from Better Lives Building Tribes.`}
 >

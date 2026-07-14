@@ -13,6 +13,13 @@ import aboutPhoto from '../assets/images/general/mrice_320x400.jpeg';
 import partnerImg from '../assets/images/hero/Welcome-to-the-Better-Lives-510x382.jpg';
 
 const featuredServices = getFeaturedServices();
+
+const homeSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Better Lives Building Tribes',
+  url: 'https://betterlivesbuildingtribes.com',
+};
 const previewTeam = teamMembers.slice(0, 6);
 
 const testimonials = [
@@ -27,7 +34,7 @@ const testimonials = [
 ];
 ---
 
-<PageLayout title="Home | Better Lives Building Tribes">
+<PageLayout title="Home | Better Lives Building Tribes" schema={homeSchema}>
   <Section background="cream" padding="lg">
     <div class="hero">
       <div class="hero__text">

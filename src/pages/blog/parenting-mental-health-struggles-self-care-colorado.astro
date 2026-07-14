@@ -6,9 +6,43 @@ import Button from '../../components/ui/Button.astro';
 const title = "Parenting Through Your Own Mental Health Struggles: Being A Good Parent While Taking Care Of Yourself In Colorado";
 const date = "2026-01-26";
 const category = "Anxiety &amp; Stress";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'PsyD, LPC',
+      url: 'https://betterlivesbuildingtribes.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Better Lives Building Tribes',
+      url: 'https://betterlivesbuildingtribes.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://betterlivesbuildingtribes.com/blog/parenting-mental-health-struggles-self-care-colorado`,
+    },
+    articleSection: category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
 ---
 
-<PageLayout title={`${title} | Better Lives Building Tribes`} description="You are struggling with anxiety, depression, or trauma. But you are also a parent. You have to keep showing up for your kids even when you can barely show up for yourself. You feel guilty. You worry a">
+<PageLayout title={`${title} | Better Lives Building Tribes`} schema={schema} description="You are struggling with anxiety, depression, or trauma. But you are also a parent. You have to keep showing up for your kids even when you can barely show up for yourself. You feel guilty. You worry a">
   <Section padding="lg">
     <article class="blog-post">
       <header class="blog-post__header">

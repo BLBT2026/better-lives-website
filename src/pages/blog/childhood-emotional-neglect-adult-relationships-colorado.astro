@@ -6,9 +6,43 @@ import Button from '../../components/ui/Button.astro';
 const title = "Childhood Emotional Neglect And Adult Relationships: Why Connection Feels So Hard In Colorado";
 const date = "2025-06-23";
 const category = "Article";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'PsyD, LPC',
+      url: 'https://betterlivesbuildingtribes.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Better Lives Building Tribes',
+      url: 'https://betterlivesbuildingtribes.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://betterlivesbuildingtribes.com/blog/childhood-emotional-neglect-adult-relationships-colorado`,
+    },
+    articleSection: category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
 ---
 
-<PageLayout title={`${title} | Better Lives Building Tribes`} description="You had a decent childhood. Your parents provided for you. There was no obvious abuse. You were fed, clothed, and sent to school. From the outside, everything looked fine. So why do relationships feel">
+<PageLayout title={`${title} | Better Lives Building Tribes`} schema={schema} description="You had a decent childhood. Your parents provided for you. There was no obvious abuse. You were fed, clothed, and sent to school. From the outside, everything looked fine. So why do relationships feel">
   <Section padding="lg">
     <article class="blog-post">
       <header class="blog-post__header">

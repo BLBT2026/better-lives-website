@@ -6,9 +6,43 @@ import Button from '../../components/ui/Button.astro';
 const title = "Parenting Through Your Own Childhood Wounds: Breaking Cycles For Colorado Families";
 const date = "2025-07-21";
 const category = "Article";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'PsyD, LPC',
+      url: 'https://betterlivesbuildingtribes.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Better Lives Building Tribes',
+      url: 'https://betterlivesbuildingtribes.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://betterlivesbuildingtribes.com/blog/parenting-childhood-wounds-breaking-cycles-colorado`,
+    },
+    articleSection: category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
 ---
 
-<PageLayout title={`${title} | Better Lives Building Tribes`} description="You swore you would never parent the way you were parented. You would be patient, present, and emotionally available. You would not yell, shame, or dismiss your child's feelings like your parents did ">
+<PageLayout title={`${title} | Better Lives Building Tribes`} schema={schema} description="You swore you would never parent the way you were parented. You would be patient, present, and emotionally available. You would not yell, shame, or dismiss your child's feelings like your parents did ">
   <Section padding="lg">
     <article class="blog-post">
       <header class="blog-post__header">

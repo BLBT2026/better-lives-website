@@ -6,9 +6,43 @@ import Button from '../../components/ui/Button.astro';
 const title = "Fighting Fair In Relationships: How To Disagree Without Damaging Your Connection In Colorado";
 const date = "2025-04-09";
 const category = "Article";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'PsyD, LPC',
+      url: 'https://betterlivesbuildingtribes.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Better Lives Building Tribes',
+      url: 'https://betterlivesbuildingtribes.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://betterlivesbuildingtribes.com/blog/fighting-fair-relationships-colorado-conflict`,
+    },
+    articleSection: category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
 ---
 
-<PageLayout title={`${title} | Better Lives Building Tribes`} description="You knew relationships involved conflict, but you did not expect it to feel this bad. Every disagreement seems to spiral. One of you shuts down, the other pursues. Voices get raised. Old wounds get re">
+<PageLayout title={`${title} | Better Lives Building Tribes`} schema={schema} description="You knew relationships involved conflict, but you did not expect it to feel this bad. Every disagreement seems to spiral. One of you shuts down, the other pursues. Voices get raised. Old wounds get re">
   <Section padding="lg">
     <article class="blog-post">
       <header class="blog-post__header">

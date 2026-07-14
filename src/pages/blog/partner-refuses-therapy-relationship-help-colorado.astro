@@ -6,9 +6,43 @@ import Button from '../../components/ui/Button.astro';
 const title = "When Your Partner Does Not Want Therapy: Navigating Resistance And Working On Yourself In Colorado";
 const date = "2025-11-17";
 const category = "Article";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'PsyD, LPC',
+      url: 'https://betterlivesbuildingtribes.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Better Lives Building Tribes',
+      url: 'https://betterlivesbuildingtribes.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://betterlivesbuildingtribes.com/blog/partner-refuses-therapy-relationship-help-colorado`,
+    },
+    articleSection: category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
 ---
 
-<PageLayout title={`${title} | Better Lives Building Tribes`} description="Your relationship is struggling. You want to go to couples therapy, but your partner refuses. They say therapy is a waste of time, that you can figure it out on your own, or that nothing is wrong. You">
+<PageLayout title={`${title} | Better Lives Building Tribes`} schema={schema} description="Your relationship is struggling. You want to go to couples therapy, but your partner refuses. They say therapy is a waste of time, that you can figure it out on your own, or that nothing is wrong. You">
   <Section padding="lg">
     <article class="blog-post">
       <header class="blog-post__header">

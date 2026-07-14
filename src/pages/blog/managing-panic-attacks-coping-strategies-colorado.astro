@@ -6,9 +6,43 @@ import Button from '../../components/ui/Button.astro';
 const title = "Managing Panic Attacks: Understanding What They Are And How To Cope In Colorado";
 const date = "2026-02-23";
 const category = "Anxiety &amp; Stress";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'PsyD, LPC',
+      url: 'https://betterlivesbuildingtribes.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Better Lives Building Tribes',
+      url: 'https://betterlivesbuildingtribes.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://betterlivesbuildingtribes.com/blog/managing-panic-attacks-coping-strategies-colorado`,
+    },
+    articleSection: category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
 ---
 
-<PageLayout title={`${title} | Better Lives Building Tribes`} description="It comes out of nowhere. Your heart races. You cannot breathe. You feel dizzy, nauseous, or like you are dying. You are terrified. You think you are having a heart attack. But the doctors say you are ">
+<PageLayout title={`${title} | Better Lives Building Tribes`} schema={schema} description="It comes out of nowhere. Your heart races. You cannot breathe. You feel dizzy, nauseous, or like you are dying. You are terrified. You think you are having a heart attack. But the doctors say you are ">
   <Section padding="lg">
     <article class="blog-post">
       <header class="blog-post__header">

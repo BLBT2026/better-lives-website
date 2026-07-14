@@ -6,9 +6,43 @@ import Button from '../../components/ui/Button.astro';
 const title = "Postpartum Struggles Beyond Depression: The Full Spectrum Of New Parent Mental Health In Colorado";
 const date = "2025-08-25";
 const category = "Article";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'PsyD, LPC',
+      url: 'https://betterlivesbuildingtribes.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Better Lives Building Tribes',
+      url: 'https://betterlivesbuildingtribes.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://betterlivesbuildingtribes.com/blog/postpartum-struggles-new-parent-mental-health-colorado`,
+    },
+    articleSection: category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
 ---
 
-<PageLayout title={`${title} | Better Lives Building Tribes`} description="You just had a baby. Everyone keeps asking if you have postpartum depression. You do not think you are depressed, but something is definitely wrong. You feel anxious all the time, checking if the baby">
+<PageLayout title={`${title} | Better Lives Building Tribes`} schema={schema} description="You just had a baby. Everyone keeps asking if you have postpartum depression. You do not think you are depressed, but something is definitely wrong. You feel anxious all the time, checking if the baby">
   <Section padding="lg">
     <article class="blog-post">
       <header class="blog-post__header">

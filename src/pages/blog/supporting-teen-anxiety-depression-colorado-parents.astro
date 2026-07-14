@@ -6,9 +6,43 @@ import Button from '../../components/ui/Button.astro';
 const title = "Supporting Your Teen Through Anxiety And Depression: A Parent's Guide For Colorado Families";
 const date = "2025-03-26";
 const category = "Article";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    datePublished: date,
+    dateModified: date,
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Meaghan Rice',
+      jobTitle: 'PsyD, LPC',
+      url: 'https://betterlivesbuildingtribes.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Better Lives Building Tribes',
+      url: 'https://betterlivesbuildingtribes.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://betterlivesbuildingtribes.com/blog/supporting-teen-anxiety-depression-colorado-parents`,
+    },
+    articleSection: category,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://betterlivesbuildingtribes.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://betterlivesbuildingtribes.com/blog' },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
 ---
 
-<PageLayout title={`${title} | Better Lives Building Tribes`} description="Your teenager used to be open with you. They would tell you about their day, their friends, what they were thinking about. Lately, they have pulled away. They spend hours in their room. They seem irri">
+<PageLayout title={`${title} | Better Lives Building Tribes`} schema={schema} description="Your teenager used to be open with you. They would tell you about their day, their friends, what they were thinking about. Lately, they have pulled away. They spend hours in their room. They seem irri">
   <Section padding="lg">
     <article class="blog-post">
       <header class="blog-post__header">
