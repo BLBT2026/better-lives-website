@@ -23,10 +23,14 @@
     <textarea id="message" name="message" rows="5" required></textarea>
   </div>
 
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAAD3R2fPe8E4Jr1Sj" data-theme="light"></div>
+
   <div class="contact-form__status" id="form-status" aria-live="polite"></div>
 
   <button type="submit" class="contact-form__submit">Send Message</button>
 </form>
+
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement;
@@ -50,14 +54,20 @@
       status.className = 'contact-form__status';
     }
 
-    // Placeholder — wire up to Cloudflare Function later
     try {
-      // const res = await fetch('/api/contact', { method: 'POST', body: data });
-      if (status) {
-        status.textContent = 'Thank you! We will be in touch soon.';
-        status.classList.add('success');
+      const res = await fetch('/api/contact', { method: 'POST', body: data });
+      const result = await res.json();
+
+      if (res.ok && result.success) {
+        if (status) {
+          status.textContent = 'Thank you! We will be in touch soon.';
+          status.classList.add('success');
+        }
+        form.reset();
+        if (window.turnstile) window.turnstile.reset();
+      } else {
+        throw new Error(result.error || 'Send failed');
       }
-      form.reset();
     } catch {
       if (status) {
         status.textContent = 'Something went wrong. Please call us at (720) 295-1508.';
