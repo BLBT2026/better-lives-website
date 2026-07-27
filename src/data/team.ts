@@ -63,10 +63,10 @@ export const teamMembers: TeamMember[] = [
   {
     name: 'Hiroko Hirata',
     title: 'CO Therapist',
-    license: 'LPCC',
+    license: 'LPC',
     licensedIn: 'CO',
     photo: hiroko,
-    bio: 'Hiroko is a Licensed Professional Counselor Candidate (LPCC) in the State of Colorado. She has two master\'s degrees to include Clinical Mental Health Counseling From Regis University and a Master of Divinity from Naropa University. Hiroko has been in the mental health field for about 7 years. Originally providing spiritual care to clients going through grief and loss, trauma, anxiety, depression, burnout, health complications, crisis, and addiction, she eventually added mindfulness, body-centered, somatic techniques, and holistic well-being to her evidence-based approach. Hiroko was born and raised in Japan and identifies as an Asian immigrant, so she has personal experience in using a diverse lens while helping people transform from a state of reactivity to a state of creativity, growth, and even playfulness.',
+    bio: 'Hiroko is a Licensed Professional Counselor (LPC) in the State of Colorado. She has two master\'s degrees to include Clinical Mental Health Counseling From Regis University and a Master of Divinity from Naropa University. Hiroko has been in the mental health field for about 7 years. Originally providing spiritual care to clients going through grief and loss, trauma, anxiety, depression, burnout, health complications, crisis, and addiction, she eventually added mindfulness, body-centered, somatic techniques, and holistic well-being to her evidence-based approach. Hiroko was born and raised in Japan and identifies as an Asian immigrant, so she has personal experience in using a diverse lens while helping people transform from a state of reactivity to a state of creativity, growth, and even playfulness.',
   },
   {
     name: 'Hope Sauer',
@@ -79,18 +79,18 @@ export const teamMembers: TeamMember[] = [
   {
     name: 'Jennifer Valenzuela-Sliger',
     title: 'CO Therapist',
-    license: 'LPCC',
+    license: 'LPC',
     licensedIn: 'CO',
     photo: jennifer,
-    bio: 'Jennifer Valenzuela-Sliger is a Licensed Professional Counselor Candidate (LPCC) in the state of Colorado. Jennifer graduated with her undergraduate and graduate degree from the University of Nevada, Reno. Jennifer obtained her counseling degree from Adams State University in 2017. Jennifer brings 12 years of experience working with adolescents and families to the Better Lives Building Tribes community. She is eclectic in that she uses client-centered approaches to meet her client\'s needs. She is proficient in motivational interviewing, and trauma-informed practices, but she also knows that clients are their own best asset. Jennifer is bilingual and thrives in her ability to provide services to clients of all different backgrounds.',
+    bio: 'Jennifer Valenzuela-Sliger is a Licensed Professional Counselor (LPC) in the state of Colorado. Jennifer graduated with her undergraduate and graduate degree from the University of Nevada, Reno. Jennifer obtained her counseling degree from Adams State University in 2017. Jennifer brings 12 years of experience working with adolescents and families to the Better Lives Building Tribes community. She is eclectic in that she uses client-centered approaches to meet her client\'s needs. She is proficient in motivational interviewing, and trauma-informed practices, but she also knows that clients are their own best asset. Jennifer is bilingual and thrives in her ability to provide services to clients of all different backgrounds.',
   },
   {
     name: 'Kaite Lempp',
     title: 'CO Therapist',
-    license: 'LPCC',
+    license: 'LPC',
     licensedIn: 'CO',
     photo: kaite,
-    bio: 'Kaite is a Licensed Professional Counselor Candidate (LPCC) in the State of CO. She graduated from the University of Northern Colorado with a Bachelor of Arts in psychology in 2018, and went on to complete her Master of Arts in clinical mental health counseling and transpersonal art therapy. With over six years of experience in the mental health field, working with diverse populations, Kaite is most intrigued by helping clients navigate the complexity of their relationships, in hopes that they can heal themselves through a better understanding of this intersection. Kaite believes in developing the therapeutic relationship as the catalyst to real change. She provides compassionate, trauma-informed care to her clients. She believes in a client-centered approach, where the client is the expert of their own experiences and their future goals and objectives. Kaite acts as the facilitator as her clients show her what is most valuable for them. If so desired, Kaite\'s expertise in art therapy can encourage more holistic, organic, and creative aspects of mental health.',
+    bio: 'Kaite is a Licensed Professional Counselor (LPC) in the State of CO. She graduated from the University of Northern Colorado with a Bachelor of Arts in psychology in 2018, and went on to complete her Master of Arts in clinical mental health counseling and transpersonal art therapy. With over six years of experience in the mental health field, working with diverse populations, Kaite is most intrigued by helping clients navigate the complexity of their relationships, in hopes that they can heal themselves through a better understanding of this intersection. Kaite believes in developing the therapeutic relationship as the catalyst to real change. She provides compassionate, trauma-informed care to her clients. She believes in a client-centered approach, where the client is the expert of their own experiences and their future goals and objectives. Kaite acts as the facilitator as her clients show her what is most valuable for them. If so desired, Kaite\'s expertise in art therapy can encourage more holistic, organic, and creative aspects of mental health.',
   },
   {
     name: 'Kiana Dearborn',
@@ -101,7 +101,7 @@ export const teamMembers: TeamMember[] = [
     bio: 'Kiana Dearborn is a Licensed Professional Counselor Candidate (LPCC) in the state of CO. She has 6 years of experience helping people navigate complicated life challenges that make them feel stuck, disconnected, or misunderstood. Whether people are navigating conflict, communication struggles, major life transitions, or a desire to deepen their connection, Kiana is here to help. Kiana likes to create a safe and supportive space where both individuals and couples can feel heard, understood, and valued. Her approach is relational and collaborative\u2014focusing on strengthening communication, rebuilding trust, and fostering deeper emotional connection. She integrates holistic and evidence-based methods tailored to specific relationship and individual needs. She believes every relationship has inherent strengths, and she also believes that everyone can work toward growth, healing, and lasting change.',
   },
   {
-    name: 'Patti Roberts',
+    name: 'Patti Miller',
     title: 'CO Therapist',
     license: 'LPC',
     licensedIn: 'CO',
@@ -127,10 +127,10 @@ export const teamMembers: TeamMember[] = [
   {
     name: 'Helen Hudson',
     title: 'AZ Therapist',
-    license: 'NBCC',
+    license: 'LAC',
     licensedIn: 'AZ',
     photo: helen,
-    bio: 'Helen is a Nationally Board Certified Counselor (NBCC). She has an undergraduate degree in communications from Stanford and a MEd in human development counseling from Vanderbilt. Helen has 30 years of experience within the private and community sectors of mental health, while also having expertise in the telehealth world. Helen is certified both as a trauma therapist and a specialist in ADHD. Helen enjoys working working with diverse populations where she can tailor treatment to match her client\'s needs. Helen brings a wealth of information to her clients as she has authored a memoir on Alzheimer\'s, written a column for the American Counseling Association, and presently writes an advice column for the Stanford Daily. Helen enjoys weaving a little bit of humor amidst her knowledge and expertise.',
+    bio: 'Helen is a Licensed Associate Counselor (LAC). She has an undergraduate degree in communications from Stanford and a MEd in human development counseling from Vanderbilt. Helen has 30 years of experience within the private and community sectors of mental health, while also having expertise in the telehealth world. Helen is certified both as a trauma therapist and a specialist in ADHD. Helen enjoys working working with diverse populations where she can tailor treatment to match her client\'s needs. Helen brings a wealth of information to her clients as she has authored a memoir on Alzheimer\'s, written a column for the American Counseling Association, and presently writes an advice column for the Stanford Daily. Helen enjoys weaving a little bit of humor amidst her knowledge and expertise.',
   },
   {
     name: 'Kevin Marquez',
