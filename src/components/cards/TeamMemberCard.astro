@@ -8,12 +8,13 @@ interface Props {
   licensedIn: string;
   photo: ImageMetadata;
   pronouns?: string;
+  bio?: string;
 }
 
-const { name, title, license, licensedIn, photo, pronouns } = Astro.props;
+const { name, title, license, licensedIn, photo, pronouns, bio } = Astro.props;
 ---
 
-<article class="team-card">
+<article class="team-card" data-has-bio={bio ? 'true' : undefined}>
   <div class="team-card__image">
     <Image src={photo} alt={name} width={400} height={284} />
   </div>
@@ -25,8 +26,35 @@ const { name, title, license, licensedIn, photo, pronouns } = Astro.props;
       <span>Licensed in: {licensedIn}</span>
       <span>License: {license}</span>
     </p>
+    {bio && <button class="team-card__read-more" type="button">Read Bio</button>}
   </div>
 </article>
+
+{bio && (
+  <div class="bio-modal" aria-hidden="true">
+    <div class="bio-modal__backdrop"></div>
+    <div class="bio-modal__dialog" role="dialog" aria-label={`Biography of ${name}`}>
+      <button class="bio-modal__close" type="button" aria-label="Close">&times;</button>
+      <div class="bio-modal__header">
+        <div class="bio-modal__photo">
+          <Image src={photo} alt={name} width={120} height={120} />
+        </div>
+        <div class="bio-modal__info">
+          <h3 class="bio-modal__name">{name}</h3>
+          {pronouns && <span class="bio-modal__pronouns">({pronouns})</span>}
+          <p class="bio-modal__title">{title}</p>
+          <p class="bio-modal__license">
+            <span>License: {license}</span>
+            <span>Licensed in: {licensedIn}</span>
+          </p>
+        </div>
+      </div>
+      <div class="bio-modal__body">
+        <p>{bio}</p>
+      </div>
+    </div>
+  </div>
+)}
 
 <style>
   .team-card {
@@ -39,6 +67,10 @@ const { name, title, license, licensedIn, photo, pronouns } = Astro.props;
 
   .team-card:hover {
     box-shadow: var(--shadow-md);
+  }
+
+  .team-card[data-has-bio] {
+    cursor: pointer;
   }
 
   .team-card__image :global(img) {
@@ -77,4 +109,180 @@ const { name, title, license, licensedIn, photo, pronouns } = Astro.props;
     font-size: var(--font-size-xs);
     color: var(--color-text);
   }
+
+  .team-card__read-more {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--color-teal);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .team-card__read-more:hover {
+    color: var(--color-primary);
+  }
+
+  /* Modal styles */
+  .bio-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease, visibility 300ms ease;
+  }
+
+  .bio-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .bio-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .bio-modal__dialog {
+    position: relative;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    max-width: 600px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: var(--space-lg);
+    transform: translateY(20px);
+    transition: transform 300ms ease;
+  }
+
+  .bio-modal.is-open .bio-modal__dialog {
+    transform: translateY(0);
+  }
+
+  .bio-modal__close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--color-text);
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+  }
+
+  .bio-modal__close:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  .bio-modal__header {
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+    margin-bottom: var(--space-md);
+  }
+
+  .bio-modal__photo {
+    flex-shrink: 0;
+  }
+
+  .bio-modal__photo :global(img) {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+  }
+
+  .bio-modal__name {
+    font-size: var(--font-size-xl);
+    color: var(--color-teal);
+    margin-bottom: 0.15rem;
+  }
+
+  .bio-modal__pronouns {
+    font-size: var(--font-size-xs);
+    color: var(--color-text);
+    font-style: italic;
+  }
+
+  .bio-modal__title {
+    font-size: var(--font-size-sm);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 0.25rem;
+  }
+
+  .bio-modal__license {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    font-size: var(--font-size-xs);
+    color: var(--color-text);
+  }
+
+  .bio-modal__body p {
+    font-size: var(--font-size-sm);
+    line-height: 1.8;
+    color: var(--color-text);
+  }
+
+  @media (max-width: 480px) {
+    .bio-modal__header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .bio-modal__dialog {
+      padding: var(--space-md);
+    }
+  }
 </style>
+
+<script>
+  function initTeamCards() {
+    document.querySelectorAll('.team-card[data-has-bio]').forEach((card) => {
+      const modal = card.nextElementSibling as HTMLElement;
+      if (!modal?.classList.contains('bio-modal')) return;
+
+      const backdrop = modal.querySelector('.bio-modal__backdrop') as HTMLElement;
+      const closeBtn = modal.querySelector('.bio-modal__close') as HTMLElement;
+
+      function open() {
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      card.addEventListener('click', open);
+      backdrop.addEventListener('click', close);
+      closeBtn.addEventListener('click', close);
+      modal.addEventListener('keydown', (e: Event) => {
+        if ((e as KeyboardEvent).key === 'Escape') close();
+      });
+    });
+  }
+
+  initTeamCards();
+  document.addEventListener('astro:after-swap', initTeamCards);
+</script>
