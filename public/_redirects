@@ -1,0 +1,87 @@
+# 302 Redirects — Search Console 404s (2026-07-28)
+# Old WordPress URLs → new Astro equivalents
+
+# Service pages (old top-level → new /services/ prefix)
+/couples-therapy/ /services/couples-therapy/ 302
+/hypnotherapy/ /services/hypnotherapy/ 302
+/mindfulness-based-therapy/ /services/mindfulness-based-therapy/ 302
+/anxiety-therapy/ /services/anxiety-therapy/ 302
+
+# Booking/scheduling pages
+/book-appointment/ /schedule/ 302
+
+# Old WordPress plugin pages
+/ameliaemployees/ /our-team/ 302
+/cart/ / 302
+
+# Blog category slug changes (old short → new full name)
+/blog/category/belonging-connection/ /blog/category/belonging-and-connection/ 302
+/blog/category/groups-community/ /blog/category/groups-and-community/ 302
+/blog/category/overachievers-burnout/ /blog/category/overachievers-and-burnout/ 302
+
+# Blog tags → closest matching category or service page
+/blog/tag/trauma-informed-therapy/ /blog/category/trauma-and-healing/ 302
+/blog/tag/belonging/ /blog/category/belonging-and-connection/ 302
+/blog/tag/burnout/ /blog/category/burnout-and-work-stress/ 302
+/blog/tag/connection/ /blog/category/belonging-and-connection/ 302
+/blog/tag/overachievers/ /blog/category/overachievers-and-burnout/ 302
+/blog/tag/benefits-of-cognitive-behavioral-therapy/ /services/cognitive-behavioral-therapy/ 302
+/blog/tag/what-is-the-goal-of-trauma-therapy/ /services/trauma-focused-therapy/ 302
+/blog/tag/family-trauma-therapy/ /services/trauma-focused-therapy/ 302
+/blog/tag/self-compassion/ /blog/ 302
+/blog/tag/students/ /blog/ 302
+/blog/tag/caregivers/ /blog/ 302
+/blog/tag/safety/ /blog/ 302
+/blog/tag/survival-mode/ /blog/ 302
+/blog/tag/nervous-system/ /blog/ 302
+/blog/tag/control/ /blog/ 302
+
+# Old top-level pages → new equivalents
+/about-us/ /about/ 302
+/partners/ /become-our-partner/ 302
+
+# Old WooCommerce/Amelia pages
+/product/ /schedule/ 302
+/product/appointment/ /schedule/ 302
+
+# Additional blog tags
+/blog/tag/anxiety/ /blog/category/anxiety-and-stress/ 302
+/blog/tag/cbt-and-medication/ /services/cognitive-behavioral-therapy/ 302
+/blog/tag/trauma/ /blog/category/trauma-and-healing/ 302
+/blog/tag/perfectionism/ /blog/category/overachievers-and-burnout/ 302
+/blog/tag/telehealth/ /blog/ 302
+
+# Blog date archives → blog index
+/blog/2025/07/14/ /blog/ 302
+/blog/2025/11/10/ /blog/ 302
+/blog/2025/08/25/ /blog/ 302
+/blog/2025/10/13/ /blog/ 302
+/blog/2025/11/03/ /blog/ 302
+/blog/2025/10/27/ /blog/ 302
+/blog/2025/11/24/ /blog/ 302
+/blog/2025/10/20/ /blog/ 302
+/blog/2025/11/17/ /blog/ 302
+/blog/2025/12/01/ /blog/ 302
+/blog/2025/06/11/ /blog/ 302
+/blog/2025/04/16/ /blog/ 302
+/blog/2024/11/25/ /blog/ 302
+
+# Blog/category RSS feed URLs → parent page
+/blog/becoming-parent-identity-relationship-changes-colorado/feed/ /blog/becoming-parent-identity-relationship-changes-colorado/ 302
+/blog/being-the-strong-one-breakdown-colorado/feed/ /blog/being-the-strong-one-breakdown-colorado/ 302
+/blog/teen-secrets-privacy-versus-secrecy-colorado/feed/ /blog/teen-secrets-privacy-versus-secrecy-colorado/ 302
+/blog/perfectionism-self-compassion-enough-colorado/feed/ /blog/perfectionism-self-compassion-enough-colorado/ 302
+/blog/different-types-of-therapy-for-mental-illness/feed/ /blog/different-types-of-therapy-for-mental-illness/ 302
+/blog/interpersonal-therapy-key-mental-health-treatments/feed/ /blog/interpersonal-therapy-key-mental-health-treatments/ 302
+/blog/types-of-trauma-therapy-and-benefits/feed/ /blog/types-of-trauma-therapy-and-benefits/ 302
+/blog/differences-between-emdr-and-hypnotherapy/feed/ /blog/differences-between-emdr-and-hypnotherapy/ 302
+/blog/category/neurodivergence/feed/ /blog/category/neurodivergence/ 302
+/blog/category/relationships-couples/feed/ /blog/category/relationships-couples/ 302
+/blog/category/teens-families/feed/ /blog/category/teens-families/ 302
+/comments/feed/ /blog/ 302
+
+# Spam post from compromised WP install
+/blog/trade-hello88-kham-pha-the-gioi-giai-tri-truc-tuyen-dinh-cao-huong-dan-va-kinh-nghiem-choi-game-26-2025/ /blog/ 302
+
+# WordPress media (wildcard)
+/wp-content/uploads/* / 302
