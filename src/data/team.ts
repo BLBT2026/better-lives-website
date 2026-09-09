@@ -127,10 +127,10 @@ export const teamMembers: TeamMember[] = [
   {
     name: 'Helen Hudson',
     title: 'AZ Therapist',
-    license: 'LAC',
+    license: 'LPC',
     licensedIn: 'AZ',
     photo: helen,
-    bio: 'Helen is a Licensed Associate Counselor (LAC). She has an undergraduate degree in communications from Stanford and a MEd in human development counseling from Vanderbilt. Helen has 30 years of experience within the private and community sectors of mental health, while also having expertise in the telehealth world. Helen is certified both as a trauma therapist and a specialist in ADHD. Helen enjoys working working with diverse populations where she can tailor treatment to match her client\'s needs. Helen brings a wealth of information to her clients as she has authored a memoir on Alzheimer\'s, written a column for the American Counseling Association, and presently writes an advice column for the Stanford Daily. Helen enjoys weaving a little bit of humor amidst her knowledge and expertise.',
+    bio: 'Helen is a Licensed Professional Counselor (LPC). She has an undergraduate degree in communications from Stanford and a MEd in human development counseling from Vanderbilt. Helen has 30 years of experience within the private and community sectors of mental health, while also having expertise in the telehealth world. Helen is certified both as a trauma therapist and a specialist in ADHD. Helen enjoys working working with diverse populations where she can tailor treatment to match her client\'s needs. Helen brings a wealth of information to her clients as she has authored a memoir on Alzheimer\'s, written a column for the American Counseling Association, and presently writes an advice column for the Stanford Daily. Helen enjoys weaving a little bit of humor amidst her knowledge and expertise.',
   },
   {
     name: 'Kevin Marquez',
