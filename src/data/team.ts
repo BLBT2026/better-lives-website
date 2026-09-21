@@ -70,11 +70,11 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: 'Hope Sauer',
-    title: 'CO Therapist',
+    title: 'CO & AZ Therapist',
     license: 'LPCC',
-    licensedIn: 'CO',
+    licensedIn: 'CO, AZ',
     photo: hope,
-    bio: 'Hope is a Licensed Professional Counselor Candidate (LPCC) in the state of CO. Soon, she will also have her Licensed Associate Counselor (LAC) in the state of AZ as well. She graduated from the University of Arizona with her bachelors in family studies and human development. She went on to complete her masters in clinical mental health counseling. Hope brings 7 years of experience to BLBT. Her background includes many different age groups, but primarily teens, young adults, and adults. Hope specializes in anxiety, depression, and relationships. She is client-centered, trauma-informed, strengths-based, solutions-focused, and values-based. Hope understands that being a cisgender White woman is a very different experience than a lot of other people experience and she wants to make sure to hold space for equity, justice, diversity, inclusion as it relates to the clients she services. She\'s hoping that clients will see therapy as a car ride. The client is in the driver\'s seat all the while receiving gentle guidance, motivation, and empathy along the way.',
+    bio: 'Hope is a Licensed Professional Counselor Candidate (LPCC) in the state of CO. She also has her Licensed Associate Counselor (LAC) in the state of AZ. She graduated from the University of Arizona with her bachelors in family studies and human development. She went on to complete her masters in clinical mental health counseling. Hope brings 7 years of experience to BLBT. Her background includes many different age groups, but primarily teens, young adults, and adults. Hope specializes in anxiety, depression, and relationships. She is client-centered, trauma-informed, strengths-based, solutions-focused, and values-based. Hope understands that being a cisgender White woman is a very different experience than a lot of other people experience and she wants to make sure to hold space for equity, justice, diversity, inclusion as it relates to the clients she services. She\'s hoping that clients will see therapy as a car ride. The client is in the driver\'s seat all the while receiving gentle guidance, motivation, and empathy along the way.',
   },
   {
     name: 'Jennifer Valenzuela-Sliger',
