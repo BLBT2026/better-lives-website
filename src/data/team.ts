@@ -1,7 +1,6 @@
 import drRice from '../assets/images/team/Dr_Meaghan_Rice_Colorado_Therapist-1.jpg';
 import brynn from '../assets/images/team/Brynn_Robles-1.jpg';
 import catt from '../assets/images/team/Catt_Smiley-1.jpg';
-import erin from '../assets/images/team/Erin_Wesley-1.jpg';
 import hiroko from '../assets/images/team/Kiroko_Hirata-1.jpeg';
 import hope from '../assets/images/team/Hope_Sauer-1.jpg';
 import jennifer from '../assets/images/team/Jennifer_Valenzuela-Sliger-1.jpg';
@@ -51,14 +50,6 @@ export const teamMembers: TeamMember[] = [
     photo: catt,
     pronouns: 'She/Her/Hers',
     bio: 'Catt is a Licensed Professional Counselor (LPC) in the state of Colorado. Catt graduated from Salve Regina University with a Master\'s Degree in Clinical Rehabilitation and Mental Health Counseling and attended University of Rhode Island where she completed her undergraduate studies, double majoring in Psychology and Human Development & Family Studies. Catt has 4 years of experience working with a wide range of individuals who struggle with anxiety, depression, trauma, feeling stuck, and general life transitions. Catt is a queer-identifying therapist, also having a special interest and experience in working with the LGBTQIA+ population. Catt loves walking alongside clients, working to unearth innate coping strategies and collaboratively develop new ways of seeing themselves, the world, and their place within it. Catt uses client-centered therapy and holistic methods in her practice and believes it is necessary to integrate mental, physical, spiritual, and emotional forms of well-being to help clients develop a deeper understanding of themselves on all of these levels. Catt strives to create an environment of safety, acceptance, validation, humor, and empathic understanding.',
-  },
-  {
-    name: 'Erin Wesley',
-    title: 'CO Therapist',
-    license: 'LPC',
-    licensedIn: 'CO',
-    photo: erin,
-    bio: 'Erin is Licensed Professional Counselor (LPC) in the State of CO. She has over 10 years of experience working with youth, adults, and families. She understands how the family system impacts, both positively and negatively, individual values, beliefs, and perspectives. Erin has had significant experience helping people understand how their own childhood trauma can morph into eating disorders, addiction, or environments that make healing feel completely overwhelming. She believes in harnassing self-awareness, self-confidence, and our own strength-based abilities to heal. Erin uses a trauma-informed, person-centered approach, with elements of Cognitive Behavioral Therapy (CBT), EMDR, and Dialectical Behavioral Therapy (DBT). Erin places great emphasis on therapeutic rapport because connecting professionally is the catalyst to change.',
   },
   {
     name: 'Hiroko Hirata',
